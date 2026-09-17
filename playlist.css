@@ -1,0 +1,200 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+body{
+    font-family:Arial, sans-serif;
+
+     background: linear-gradient(to right, #278cff, #f032fa);
+
+    min-height:100vh;
+}
+
+/* WRAPPER PAGINA */
+.page{
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+
+    height:100vh;
+    width:70px;
+
+    background-color:#000;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding-top:20px;
+
+    transition:0.4s;
+
+    z-index:20;
+    overflow:hidden;
+}
+
+/* espansione sidebar */
+.sidebar:hover{
+    width:200px;
+}
+
+/* hamburger */
+.menu-toggle{
+    font-size:26px;
+    margin-bottom:40px;
+    cursor:pointer;
+}
+
+/* link */
+.sidebar a{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:15px;
+    text-decoration:none;
+    color:white;
+
+    transition:0.3s;
+}
+
+/* icone */
+.sidebar span{
+    font-size:22px;
+    min-width:40px;
+    text-align:center;
+}
+
+/* testo nascosto */
+.sidebar p{
+    opacity:0;
+    transition:0.3s;
+    white-space:nowrap;
+}
+
+/* testo visibile */
+.sidebar:hover p{
+    opacity:1;
+}
+
+/* hover link */
+.sidebar a:hover{
+    background-color:#111;
+}
+
+/* CONTENUTO */
+.content{
+    margin-left:70px;
+    padding:30px;
+    flex:1;
+
+    transition:0.4s;
+}
+
+/* sposta contenuto quando sidebar si apre */
+.sidebar:hover ~ .content{
+    margin-left:200px;
+}
+
+/* TITOLO */
+.title{
+    margin-top: 20px;
+    text-align:center;
+    color:white;
+    margin-bottom:40px;
+    text-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+.p{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.final-message{
+    margin-top:10px;
+    padding:30px;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    text-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.final-message p{
+    max-width:600px;
+    margin:0 auto;
+}
+.playlist{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-left: 100px;
+}
+
+/* CARD CANZONE */
+.song-card{
+    display:flex;
+    gap:20px;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    align-items:center;
+
+    transition:0.3s;
+}
+
+/* hover card */
+.song-card:hover{
+    transform:scale(1.02);
+}
+
+/* ALBUM */
+.album{
+    width:120px;
+    height:120px;
+
+    border-radius:15px;
+
+    object-fit:cover;
+}
+
+/* INFO */
+.song-info h2{
+    margin:0;
+    color:#ff236b;
+}
+
+/* TESTO CANZONE */
+.lyrics{
+    font-style:italic;
+    color:#555;
+    margin:5px 0;
+}
+
+/* PENSIERO */
+.thought{
+    color:#222;
+    font-size:14px;
+}

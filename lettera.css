@@ -1,0 +1,1514 @@
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SFONDO
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,0.35),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255,255,255,0.25),
+            transparent 25%
+        ),
+        linear-gradient(
+            115deg,
+            #f99bce 0%,
+            #f7b6d9 35%,
+            #c5c9fa 70%,
+            #91a7f5 100%
+        );
+
+    color: #3c2730;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 70px;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.96);
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 20px;
+
+    transition: width 0.4s ease;
+
+    z-index: 1000;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+
+/* menu */
+
+.menu-toggle {
+    font-size: 28px;
+
+    margin-bottom: 35px;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+/* link */
+
+.sidebar a {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    text-decoration: none;
+
+    color: white;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+
+/* icone */
+
+.sidebar span {
+    min-width: 40px;
+
+    text-align: center;
+
+    font-size: 22px;
+}
+
+
+/* testo */
+
+.sidebar p {
+    opacity: 0;
+
+    white-space: nowrap;
+
+    transition: opacity 0.3s ease;
+
+    font-family: Arial, sans-serif;
+}
+
+.sidebar:hover p {
+    opacity: 1;
+}
+
+
+/* pagina corrente */
+
+.sidebar a.active {
+    color: #ff8fc7;
+}
+
+.sidebar a.active span {
+    filter: drop-shadow(0 0 8px rgba(255,143,199,0.8));
+}
+
+
+/* =========================================================
+   CUORI LATERALI
+========================================================= */
+
+.side-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+.side-heart {
+    position: absolute;
+
+    bottom: -30px;
+
+    animation: sideRise 5s linear forwards;
+
+    opacity: 0.75;
+
+    filter: drop-shadow(
+        0 0 5px rgba(255,255,255,0.5)
+    );
+}
+
+@keyframes sideRise {
+
+    0% {
+        transform:
+            translateY(0)
+            scale(0.7)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            scale(1.15)
+            rotate(20deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CONTENITORE PRINCIPALE
+========================================================= */
+
+.letter-world {
+    min-height: 100vh;
+
+    margin-left: 70px;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   SCHERMATA BUSTA
+========================================================= */
+
+.envelope-screen {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 30px;
+
+    position: relative;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+/* =========================================================
+   TITOLO
+========================================================= */
+
+.envelope-title {
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    animation: titleAppear 1.2s ease forwards;
+}
+
+.envelope-title p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+
+    color: #51333e;
+
+    margin-bottom: 2px;
+}
+
+.envelope-title h1 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    font-weight: 400;
+
+    color: #402833;
+
+    line-height: 1;
+
+    text-shadow:
+        0 2px 3px rgba(255,255,255,0.5);
+}
+
+.envelope-title h1 span {
+    color: #e85c91;
+
+    font-size: 0.75em;
+
+    display: inline-block;
+
+    animation: heartBeat 2s infinite;
+}
+
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+/* =========================================================
+   CONTENITORE BUSTA
+========================================================= */
+
+.envelope-wrapper {
+    width: min(560px, 80vw);
+
+    height: min(410px, 58vw);
+
+    min-height: 300px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    perspective: 1400px;
+
+    animation: envelopeAppear 1.4s ease forwards;
+}
+
+
+@keyframes envelopeAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   LUCE SOTTO LA BUSTA
+========================================================= */
+
+.envelope-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    width: 75%;
+    height: 35%;
+
+    bottom: 7%;
+
+    background: rgba(255,255,255,0.45);
+
+    filter: blur(35px);
+
+    border-radius: 50%;
+
+    z-index: -2;
+
+    animation: envelopeGlow 3s ease-in-out infinite;
+}
+
+
+@keyframes envelopeGlow {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.08);
+
+        opacity: 0.8;
+    }
+}
+
+
+/* =========================================================
+   BUSTA
+========================================================= */
+
+.heart-envelope {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+
+    filter:
+        drop-shadow(
+            0 25px 25px rgba(74, 43, 57, 0.25)
+        );
+}
+
+.heart-envelope:hover {
+    transform:
+        translateY(-8px)
+        scale(1.025);
+}
+
+.heart-envelope:active {
+    transform:
+        translateY(-3px)
+        scale(0.98);
+}
+
+
+/* =========================================================
+   PARTE POSTERIORE
+========================================================= */
+
+.envelope-back {
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+
+    bottom: 13%;
+
+    height: 65%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff1d9,
+            #eac89d
+        );
+
+    border-radius: 10px 10px 15px 15px;
+
+    border: 1px solid rgba(123,82,49,0.25);
+
+    box-shadow:
+        inset 0 2px 5px rgba(255,255,255,0.65),
+        inset 0 -4px 8px rgba(122,76,39,0.08);
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   CUORE SUPERIORE DELLA BUSTA
+========================================================= */
+
+.envelope-flap {
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+
+    top: 10%;
+
+    height: 62%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff4df,
+            #e8c496
+        );
+
+    border-radius:
+        52% 52% 12% 12% /
+        55% 55% 20% 20%;
+
+    transform:
+        rotate(0deg);
+
+    transform-origin: center top;
+
+    z-index: 5;
+
+    box-shadow:
+        inset 0 2px 5px rgba(255,255,255,0.75),
+        0 3px 5px rgba(88,53,35,0.08);
+
+    clip-path: polygon(
+        50% 100%,
+        0% 42%,
+        0% 25%,
+        10% 8%,
+        25% 0%,
+        39% 2%,
+        50% 15%,
+        61% 2%,
+        75% 0%,
+        90% 8%,
+        100% 25%,
+        100% 42%
+    );
+
+    transition:
+        transform 1.2s cubic-bezier(.68,-0.1,.25,1.2),
+        z-index 0s linear 0.5s;
+}
+
+
+/* =========================================================
+   PARTE FRONTALE
+========================================================= */
+
+.envelope-front {
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+
+    bottom: 13%;
+
+    height: 48%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f6dbb4,
+            #e4bb87
+        );
+
+    clip-path: polygon(
+        0 0,
+        50% 62%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    border-radius: 0 0 15px 15px;
+
+    z-index: 6;
+
+    box-shadow:
+        inset 0 -3px 7px rgba(113,70,37,0.08);
+}
+
+
+/* =========================================================
+   FOGLIO CHE SI VEDE DENTRO
+========================================================= */
+
+.paper-inside {
+    position: absolute;
+
+    left: 17%;
+    right: 17%;
+
+    bottom: 18%;
+
+    height: 55%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #fffaf0,
+            #f5e7ce
+        );
+
+    border-radius: 5px;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 25px;
+
+    box-shadow:
+        0 4px 8px rgba(80,50,30,0.15);
+
+    transition:
+        transform 1s ease,
+        opacity 0.5s ease;
+}
+
+.paper-inside span {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 30px;
+
+    color: #5d3d38;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   SIGILLO
+========================================================= */
+
+.wax-seal {
+    position: absolute;
+
+    width: 82px;
+    height: 82px;
+
+    left: 50%;
+    top: 53%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 10;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ff8da4,
+            #b52e50 55%,
+            #761d37 100%
+        );
+
+    border: 4px solid #a92d4a;
+
+    box-shadow:
+        inset 0 4px 5px rgba(255,255,255,0.35),
+        inset 0 -5px 8px rgba(60,0,20,0.35),
+        0 5px 10px rgba(75,20,35,0.3);
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.5s ease;
+}
+
+.wax-seal::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border: 2px solid rgba(255,200,210,0.55);
+
+    border-radius: 50%;
+}
+
+.wax-seal span {
+    color: #ffd7df;
+
+    font-size: 35px;
+
+    position: relative;
+
+    z-index: 2;
+
+    text-shadow:
+        0 2px 2px rgba(75,0,20,0.35);
+}
+
+
+/* =========================================================
+   EFFETTO HOVER SIGILLO
+========================================================= */
+
+.heart-envelope:hover .wax-seal {
+    transform:
+        translate(-50%, -50%)
+        scale(1.08)
+        rotate(-4deg);
+}
+
+
+/* =========================================================
+   PULSANTE
+========================================================= */
+
+.open-letter-button {
+    border: none;
+
+    background: transparent;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 27px;
+
+    color: #50313e;
+
+    cursor: pointer;
+
+    padding: 8px 18px;
+
+    margin-top: 5px;
+
+    position: relative;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.open-letter-button::after {
+    content: "↗";
+
+    margin-left: 8px;
+
+    font-size: 24px;
+}
+
+.open-letter-button:hover {
+    transform: translateY(-3px);
+
+    color: #d94d82;
+}
+
+.open-letter-button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================================
+   TRANSIZIONE
+========================================================= */
+
+.letter-transition {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.95),
+            rgba(255,174,211,0.95),
+            rgba(145,163,244,0.95)
+        );
+
+    z-index: 2000;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.transition-heart {
+    font-size: 80px;
+
+    color: #e95c91;
+
+    transform: scale(0);
+
+    text-shadow:
+        0 0 25px rgba(255,255,255,0.9);
+}
+
+
+/* =========================================================
+   LETTERA
+========================================================= */
+
+.letter-screen {
+    display: none;
+
+    min-height: 100vh;
+
+    padding:
+        80px
+        6%
+        100px;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    opacity: 0;
+}
+
+.letter {
+    position: relative;
+
+    width: min(900px, 100%);
+
+    padding:
+        75px
+        clamp(35px, 7vw, 90px)
+        90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7e7,
+            #f4e2c4
+        );
+
+    color: #4b352e;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 25px 60px rgba(65,38,40,0.28),
+        0 5px 15px rgba(65,38,40,0.15);
+
+    overflow: hidden;
+
+    transform:
+        translateY(50px)
+        scale(0.94);
+
+    animation: letterAppear 1.2s ease forwards;
+
+    font-family: "Caveat", cursive;
+}
+
+
+/* texture */
+
+.letter::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.25;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(120,70,30,0.12) 0 1px,
+            transparent 2px
+        );
+
+    background-size: 8px 8px;
+
+    mix-blend-mode: multiply;
+}
+
+
+/* bordo interno */
+
+.letter::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 18px;
+
+    border: 1px solid rgba(135,91,54,0.22);
+
+    pointer-events: none;
+}
+
+
+@keyframes letterAppear {
+
+    to {
+        transform:
+            translateY(0)
+            scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   DECORAZIONI CARTA
+========================================================= */
+
+.paper-decoration {
+    position: absolute;
+
+    font-size: 55px;
+
+    color: rgba(137,91,53,0.38);
+
+    z-index: 2;
+}
+
+.top-left {
+    top: 25px;
+    left: 30px;
+
+    transform: rotate(-25deg);
+}
+
+.top-right {
+    top: 25px;
+    right: 30px;
+
+    transform: rotate(25deg);
+}
+
+.bottom-left {
+    bottom: 25px;
+    left: 30px;
+
+    transform: rotate(-145deg);
+}
+
+.bottom-right {
+    bottom: 25px;
+    right: 30px;
+
+    transform: rotate(145deg);
+}
+
+
+/* =========================================================
+   HEADER LETTERA
+========================================================= */
+
+.letter-header {
+    text-align: center;
+
+    margin-bottom: 45px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+.header-heart {
+    color: #d95782;
+
+    font-size: 28px;
+
+    margin-bottom: 2px;
+}
+
+.letter-header h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(55px, 7vw, 80px);
+
+    font-weight: 400;
+
+    color: #50322e;
+
+    line-height: 1;
+}
+
+.letter-divider {
+    margin-top: 12px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #9b6b5b;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+}
+
+.letter-divider b {
+    color: #d95782;
+
+    font-size: 22px;
+
+    font-weight: normal;
+}
+
+
+/* =========================================================
+   TESTO
+========================================================= */
+
+.letter-content {
+    position: relative;
+
+    z-index: 3;
+}
+
+.letter-content p {
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(22px, 2vw, 27px);
+
+    line-height: 1.55;
+
+    text-align: left;
+
+    margin-bottom: 27px;
+
+    color: #4a352f;
+}
+
+
+/* =========================================================
+   PARTE SPECIALE
+========================================================= */
+
+.letter-highlight {
+    margin:
+        45px
+        0;
+
+    padding:
+        35px
+        30px;
+
+    text-align: center;
+
+    position: relative;
+
+    border-top: 1px solid rgba(130,82,55,0.3);
+
+    border-bottom: 1px solid rgba(130,82,55,0.3);
+
+    background:
+        rgba(255,255,255,0.18);
+}
+
+.letter-highlight p {
+    text-align: center;
+
+    margin-bottom: 18px;
+}
+
+.highlight-heart {
+    color: #df5a86;
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+}
+
+.letter-highlight h3 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(38px, 5vw, 54px);
+
+    font-weight: 400;
+
+    color: #713b4c;
+
+    margin: 18px 0 25px;
+}
+
+
+/* =========================================================
+   FINALE
+========================================================= */
+
+.letter-ending {
+    text-align: center;
+
+    margin-top: 55px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+.final-message {
+    text-align: center !important;
+
+    font-size: clamp(30px, 4vw, 42px) !important;
+
+    line-height: 1.35 !important;
+
+    color: #633c4a !important;
+
+    margin-bottom: 25px !important;
+}
+
+.ending-divider {
+    color: #d95782;
+
+    font-size: 30px;
+
+    margin: 20px 0;
+}
+
+.love-message {
+    text-align: center !important;
+
+    font-size: clamp(25px, 3vw, 34px) !important;
+
+    color: #773b50 !important;
+}
+
+.signature {
+    text-align: right !important;
+
+    margin-top: 45px !important;
+
+    padding-right: 15px;
+
+    font-family: "Great Vibes", cursive !important;
+
+    font-size: clamp(38px, 5vw, 55px) !important;
+
+    color: #713849 !important;
+}
+
+
+/* =========================================================
+   DECORAZIONE FONDO
+========================================================= */
+
+.paper-bottom {
+    position: absolute;
+
+    bottom: 22px;
+
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: rgba(126,76,62,0.45);
+
+    font-size: 18px;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   BOTTONE TORNA ALLA BUSTA
+========================================================= */
+
+.back-to-envelope {
+    display: none;
+
+    margin:
+        0 auto
+        60px;
+
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffafd1,
+            #d99af1
+        );
+
+    color: white;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(180,70,130,0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.back-to-envelope:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(180,70,130,0.35);
+}
+
+
+/* =========================================================
+   STATO APERTURA
+========================================================= */
+
+body.letter-opening .heart-envelope {
+    cursor: default;
+}
+
+body.letter-opening .heart-envelope:hover {
+    transform: none;
+}
+
+body.letter-opening .envelope-flap {
+    transform:
+        rotateX(180deg);
+
+    z-index: 1;
+}
+
+body.letter-opening .wax-seal {
+    transform:
+        translate(-50%, -50%)
+        scale(1.5)
+        rotate(15deg);
+
+    opacity: 0;
+}
+
+body.letter-opening .paper-inside {
+    transform:
+        translateY(-120px)
+        scale(1.05);
+}
+
+body.letter-opening .envelope-screen {
+    opacity: 0;
+
+    transform:
+        scale(1.08)
+        translateY(-30px);
+
+    pointer-events: none;
+}
+
+body.letter-opening .letter-transition {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+body.letter-opening .transition-heart {
+    animation: transitionHeart 1.2s ease forwards;
+}
+
+
+@keyframes transitionHeart {
+
+    0% {
+        transform: scale(0);
+
+        opacity: 0;
+    }
+
+    45% {
+        transform: scale(1.4);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(18);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar:hover {
+        width: 180px;
+    }
+
+    .letter-world {
+        margin-left: 60px;
+    }
+
+    .envelope-wrapper {
+        width: min(520px, 80vw);
+    }
+
+    .letter-screen {
+        padding:
+            60px
+            4%
+            80px;
+    }
+
+    .letter {
+        padding:
+            65px
+            55px
+            75px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — TELEFONO
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        width: 55px;
+    }
+
+    .sidebar:hover {
+        width: 55px;
+    }
+
+    .sidebar p {
+        display: none;
+    }
+
+    .sidebar a {
+        justify-content: center;
+
+        padding: 14px 5px;
+    }
+
+    .sidebar span {
+        min-width: auto;
+    }
+
+    .menu-toggle {
+        font-size: 23px;
+
+        margin-bottom: 25px;
+    }
+
+    .letter-world {
+        margin-left: 55px;
+    }
+
+    .envelope-screen {
+        padding:
+            30px
+            15px;
+    }
+
+    .envelope-title {
+        margin-bottom: 15px;
+    }
+
+    .envelope-title p {
+        font-size: 19px;
+    }
+
+    .envelope-title h1 {
+        font-size: 55px;
+    }
+
+    .envelope-wrapper {
+        width: 95vw;
+
+        height: 65vw;
+
+        min-height: 240px;
+    }
+
+    .wax-seal {
+        width: 65px;
+        height: 65px;
+    }
+
+    .wax-seal span {
+        font-size: 27px;
+    }
+
+    .paper-inside span {
+        font-size: 24px;
+    }
+
+    .open-letter-button {
+        font-size: 24px;
+    }
+
+    .letter-screen {
+        padding:
+            35px
+            12px
+            60px;
+    }
+
+    .letter {
+        padding:
+            55px
+            27px
+            70px;
+    }
+
+    .letter::after {
+        inset: 10px;
+    }
+
+    .paper-decoration {
+        font-size: 35px;
+    }
+
+    .top-left,
+    .bottom-left {
+        left: 15px;
+    }
+
+    .top-right,
+    .bottom-right {
+        right: 15px;
+    }
+
+    .letter-header {
+        margin-bottom: 30px;
+    }
+
+    .letter-content p {
+        font-size: 20px;
+
+        line-height: 1.5;
+
+        margin-bottom: 22px;
+    }
+
+    .letter-highlight {
+        padding:
+            25px
+            15px;
+
+        margin:
+            30px 0;
+    }
+
+    .letter-highlight h3 {
+        font-size: 38px;
+    }
+
+    .signature {
+        text-align: center !important;
+
+        padding-right: 0;
+    }
+}
+
+
+/* =========================================================
+   RIDUZIONE ANIMAZIONI
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
