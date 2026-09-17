@@ -1,0 +1,1123 @@
+/* =========================================================
+   PAGINA FOTO
+========================================================= */
+
+.photo-page {
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding-left: 70px;
+    padding-bottom: 100px;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255, 255, 255, 0.22),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(255, 150, 210, 0.16),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #120018,
+            #28001d,
+            #16001d,
+            #08000d
+        );
+
+    color: white;
+}
+
+
+/* =========================================================
+   TITOLO
+========================================================= */
+
+.photo-header {
+    width: min(1000px, 90%);
+    margin: 60px auto 50px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+.title-decoration {
+    font-size: 32px;
+    margin-bottom: 8px;
+
+    color: #ffb6dc;
+
+    text-shadow:
+        0 0 10px rgba(255, 150, 210, 0.8),
+        0 0 25px rgba(255, 100, 180, 0.5);
+
+    animation: floatingHeart 2.5s ease-in-out infinite;
+}
+
+.photo-header h1 {
+    margin-bottom: 20px;
+
+    font-size: clamp(38px, 5vw, 65px);
+
+    font-weight: 700;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 25px rgba(255, 80, 160, 0.8),
+        0 0 50px rgba(255, 50, 150, 0.4);
+}
+
+.photo-header p {
+    max-width: 850px;
+
+    margin: 10px auto;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.little-line {
+    margin-top: 25px;
+
+    color: #ffb6dc;
+
+    font-size: 18px;
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   COLLAGE
+========================================================= */
+
+.photo-gallery {
+
+    width: min(1250px, 92%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    /*
+        La griglia è volutamente molto larga.
+        Le foto occuperanno più celle.
+    */
+
+    grid-template-columns:
+        repeat(12, 1fr);
+
+    grid-auto-rows: 85px;
+
+    gap: 18px;
+
+    align-items: stretch;
+
+    position: relative;
+
+    padding: 30px 10px 80px;
+}
+
+
+/* =========================================================
+   CARD DELLE FOTO
+========================================================= */
+
+.photo-card {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 8px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35),
+        0 0 12px rgba(255, 150, 210, 0.10);
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.45s ease,
+        z-index 0.2s ease;
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+
+/* FOTO */
+
+.photo-card img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 2px;
+
+    user-select: none;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/* =========================================================
+   EFFETTO HOVER
+========================================================= */
+
+.photo-card:hover {
+
+    z-index: 20;
+
+    transform:
+        scale(1.07)
+        rotate(0deg)
+        translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(255, 150, 210, 0.35);
+}
+
+.photo-card:hover img {
+
+    transform: scale(1.04);
+
+    filter: brightness(1.04);
+}
+
+
+/* =========================================================
+   POSIZIONI E DIMENSIONI
+   42 FOTO
+========================================================= */
+
+
+/* ----- BLOCCO 1 ----- */
+
+.photo-1 {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    transform: rotate(-1.5deg);
+}
+
+.photo-2 {
+    grid-column: span 3;
+    grid-row: span 3;
+
+    transform: rotate(1.8deg);
+}
+
+.photo-3 {
+    grid-column: span 5;
+    grid-row: span 3;
+
+    transform: rotate(-0.8deg);
+}
+
+.photo-4 {
+    grid-column: span 3;
+    grid-row: span 4;
+
+    transform: rotate(1.2deg);
+}
+
+.photo-5 {
+    grid-column: span 5;
+    grid-row: span 4;
+
+    transform: rotate(-1deg);
+}
+
+
+/* ----- BLOCCO 2 ----- */
+
+.photo-6 {
+    grid-column: span 4;
+    grid-row: span 3;
+
+    transform: rotate(1.5deg);
+}
+
+.photo-7 {
+    grid-column: span 3;
+    grid-row: span 4;
+
+    transform: rotate(-2deg);
+}
+
+.photo-8 {
+    grid-column: span 5;
+    grid-row: span 4;
+
+    transform: rotate(0.7deg);
+}
+
+.photo-9 {
+    grid-column: span 4;
+    grid-row: span 3;
+
+    transform: rotate(-1.3deg);
+}
+
+.photo-10 {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    transform: rotate(1.7deg);
+}
+
+
+/* ----- BLOCCO 3 ----- */
+
+.photo-11 {
+    grid-column: span 4;
+    grid-row: span 5;
+
+    transform: rotate(-1deg);
+}
+
+.photo-12 {
+    grid-column: span 5;
+    grid-row: span 3;
+
+    transform: rotate(1.3deg);
+}
+
+.photo-13 {
+    grid-column: span 3;
+    grid-row: span 4;
+
+    transform: rotate(-1.7deg);
+}
+
+.photo-14 {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    transform: rotate(1deg);
+}
+
+.photo-15 {
+    grid-column: span 5;
+    grid-row: span 4;
+
+    transform: rotate(-0.7deg);
+}
+
+
+/* ----- BLOCCO 4 ----- */
+
+.photo-16 {
+    grid-column: span 3;
+    grid-row: span 4;
+
+    transform: rotate(1.8deg);
+}
+
+.photo-17 {
+    grid-column: span 5;
+    grid-row: span 3;
+
+    transform: rotate(-1.2deg);
+}
+
+.photo-18 {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    transform: rotate(0.8deg);
+}
+
+.photo-19 {
+    grid-column: span 5;
+    grid-row: span 4;
+
+    transform: rotate(-1.5deg);
+}
+
+.photo-20 {
+    grid-column: span 3;
+    grid-row: span 3;
+
+    transform: rotate(1.6deg);
+}
+
+
+/* ----- BLOCCO 5 ----- */
+
+.photo-21 {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    transform: rotate(-0.9deg);
+}
+
+.photo-22 {
+    grid-column: span 4;
+    grid-row: span 3;
+
+    transform: rotate(1.5deg);
+}
+
+.photo-23 {
+    grid-column: span 4;
+    grid-row: span 5;
+
+    transform: rotate(-1.1deg);
+}
+
+.photo-24 {
+    grid-column: span 5;
+    grid-row: span 3;
+
+    transform: rotate(0.8deg);
+}
+
+.photo-25 {
+    grid-column: span 3;
+    grid-row: span 4;
+
+    transform: rotate(-1.7deg);
+}
+
+
+/* ----- BLOCCO 6 ----- */
+
+.photo-26 {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    transform: rotate(1.1deg);
+}
+
+.photo-27 {
+    grid-column: span 5;
+    grid-row: span 4;
+
+    transform: rotate(-0.8deg);
+}
+
+.photo-28 {
+    grid-column: span 3;
+    grid-row: span 3;
+
+    transform: rotate(1.8deg);
+}
+
+.photo-29 {
+    grid-column: span 3;
+    grid-row: span 5;
+
+    transform: rotate(-1.4deg);
+}
+
+.photo-30 {
+    grid-column: span 5;
+    grid-row: span 3;
+
+    transform: rotate(0.9deg);
+}
+
+
+/* ----- BLOCCO 7 ----- */
+
+.photo-31 {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    transform: rotate(-1.2deg);
+}
+
+.photo-32 {
+    grid-column: span 5;
+    grid-row: span 4;
+
+    transform: rotate(1.3deg);
+}
+
+.photo-33 {
+    grid-column: span 3;
+    grid-row: span 5;
+
+    transform: rotate(-0.8deg);
+}
+
+.photo-34 {
+    grid-column: span 5;
+    grid-row: span 3;
+
+    transform: rotate(1.5deg);
+}
+
+.photo-35 {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    transform: rotate(-1.4deg);
+}
+
+
+/* ----- BLOCCO 8 ----- */
+
+.photo-36 {
+    grid-column: span 3;
+    grid-row: span 4;
+
+    transform: rotate(1.8deg);
+}
+
+.photo-37 {
+    grid-column: span 5;
+    grid-row: span 4;
+
+    transform: rotate(-0.9deg);
+}
+
+.photo-38 {
+    grid-column: span 4;
+    grid-row: span 3;
+
+    transform: rotate(1.1deg);
+}
+
+.photo-39 {
+    grid-column: span 4;
+    grid-row: span 5;
+
+    transform: rotate(-1.5deg);
+}
+
+.photo-40 {
+    grid-column: span 3;
+    grid-row: span 4;
+
+    transform: rotate(1.4deg);
+}
+
+.photo-41 {
+    grid-column: span 5;
+    grid-row: span 3;
+
+    transform: rotate(-0.8deg);
+}
+
+.photo-42 {
+    grid-column: span 4;
+    grid-row: span 4;
+
+    transform: rotate(1.2deg);
+}
+
+
+/* =========================================================
+   TESTO FINALE
+========================================================= */
+
+.photo-ending {
+
+    width: 90%;
+
+    margin: 30px auto 50px;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.photo-ending p:first-child {
+
+    font-size: 24px;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.photo-ending p:last-child {
+
+    margin-top: 8px;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    color: #ffb6dc;
+
+    text-shadow:
+        0 0 10px rgba(255, 100, 180, 0.8),
+        0 0 25px rgba(255, 100, 180, 0.4);
+}
+
+
+/* =========================================================
+   PULSANTI
+========================================================= */
+
+.button-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    margin: 30px auto 80px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.button-area button {
+
+    padding: 15px 30px;
+
+    font-size: 18px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f9a,
+            #ff75b5
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255, 50, 140, 0.55),
+        0 8px 20px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.button-area button:hover {
+
+    transform: translateY(-4px) scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(255, 80, 160, 0.8),
+        0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   Per ora preparato.
+   Il JS lo renderà funzionante.
+========================================================= */
+
+.photo-lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(5, 0, 10, 0.94);
+
+    backdrop-filter: blur(12px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+
+    z-index: 1000;
+}
+
+.photo-lightbox.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* contenuto */
+
+.lightbox-content {
+
+    max-width: 80vw;
+    max-height: 85vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.lightbox-content img {
+
+    max-width: 80vw;
+    max-height: 78vh;
+
+    object-fit: contain;
+
+    border: 8px solid white;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 0 40px rgba(255, 150, 210, 0.35),
+        0 20px 60px rgba(0, 0, 0, 0.7);
+
+    transform: scale(0.85);
+
+    transition:
+        transform 0.4s ease;
+}
+
+.photo-lightbox.active
+.lightbox-content img {
+
+    transform: scale(1);
+}
+
+
+/* =========================================================
+   LIGHTBOX BOTTONI
+========================================================= */
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+
+    position: absolute;
+
+    border: none;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: scale(1.1);
+}
+
+
+/* chiudi */
+
+.lightbox-close {
+
+    top: 25px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    font-size: 35px;
+
+    line-height: 1;
+}
+
+
+/* precedente */
+
+.lightbox-prev {
+
+    left: 30px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+}
+
+.lightbox-prev:hover {
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+}
+
+
+/* successiva */
+
+.lightbox-next {
+
+    right: 30px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+}
+
+.lightbox-next:hover {
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+}
+
+
+/* contatore */
+
+.lightbox-counter {
+
+    margin-top: 15px;
+
+    font-size: 16px;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================================
+   ANIMAZIONE CUORE TITOLO
+========================================================= */
+
+@keyframes floatingHeart {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-7px) scale(1.08);
+    }
+}
+
+
+/* =========================================================
+   ANIMAZIONE ENTRATA FOTO
+========================================================= */
+
+.photo-card {
+
+    animation:
+        photoAppear 0.8s ease both;
+}
+
+.photo-card:nth-child(1)  { animation-delay: 0.05s; }
+.photo-card:nth-child(2)  { animation-delay: 0.10s; }
+.photo-card:nth-child(3)  { animation-delay: 0.15s; }
+.photo-card:nth-child(4)  { animation-delay: 0.20s; }
+.photo-card:nth-child(5)  { animation-delay: 0.25s; }
+.photo-card:nth-child(6)  { animation-delay: 0.30s; }
+.photo-card:nth-child(7)  { animation-delay: 0.35s; }
+.photo-card:nth-child(8)  { animation-delay: 0.40s; }
+.photo-card:nth-child(9)  { animation-delay: 0.45s; }
+.photo-card:nth-child(10) { animation-delay: 0.50s; }
+
+@keyframes photoAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.92);
+    }
+
+    to {
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   CUORI E STELLINE
+========================================================= */
+
+.hearts-container,
+.stars-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 900;
+}
+
+.heart,
+.star {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    animation:
+        floatingParticle linear forwards;
+}
+
+@keyframes floatingParticle {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+
+        opacity: 1;
+    }
+
+    90% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .photo-page {
+
+        padding-left: 60px;
+    }
+
+    .photo-gallery {
+
+        width: 94%;
+
+        grid-template-columns:
+            repeat(6, 1fr);
+
+        grid-auto-rows: 90px;
+
+        gap: 14px;
+    }
+
+    .photo-card {
+
+        grid-column: span 2 !important;
+
+        grid-row: span 3 !important;
+    }
+
+    .photo-1,
+    .photo-8,
+    .photo-15,
+    .photo-23,
+    .photo-32 {
+
+        grid-column: span 3 !important;
+
+        grid-row: span 4 !important;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE TELEFONO
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .photo-page {
+
+        padding-left: 0;
+    }
+
+    .photo-header {
+
+        width: 88%;
+
+        margin-top: 40px;
+    }
+
+    .photo-header h1 {
+
+        font-size: 36px;
+    }
+
+    .photo-header p {
+
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    .photo-gallery {
+
+        width: 94%;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        grid-auto-rows: 130px;
+
+        gap: 12px;
+
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .photo-card {
+
+        grid-column: span 1 !important;
+
+        grid-row: span 2 !important;
+
+        padding: 5px;
+    }
+
+    .photo-1,
+    .photo-5,
+    .photo-8,
+    .photo-11,
+    .photo-15,
+    .photo-18,
+    .photo-23,
+    .photo-27,
+    .photo-32,
+    .photo-37,
+    .photo-39 {
+
+        grid-column: span 2 !important;
+
+        grid-row: span 3 !important;
+    }
+
+    .button-area {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .button-area button {
+
+        width: 80%;
+
+        font-size: 16px;
+    }
+
+    .lightbox-content {
+
+        max-width: 92vw;
+    }
+
+    .lightbox-content img {
+
+        max-width: 90vw;
+
+        max-height: 75vh;
+    }
+
+    .lightbox-prev {
+
+        left: 10px;
+    }
+
+    .lightbox-next {
+
+        right: 10px;
+    }
+
+    .lightbox-close {
+
+        top: 15px;
+        right: 15px;
+    }
+}

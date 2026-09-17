@@ -1,0 +1,703 @@
+
+.animated-bg {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;   /* blocca solo lo scroll orizzontale */
+
+    background: linear-gradient(
+        -45deg,
+        #ff589e,
+        #66c7ff,
+        #b181ff,
+        #ff8189,
+        #cb97ff
+    );
+
+    background-size: 400% 400%;
+    animation: pastelGradient 15s ease infinite;
+}
+.hearts{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+/* STILE CUORI */
+.hearts span{
+    position:absolute;
+    bottom:-50px;
+    font-size:24px;
+    animation:floatUp 8s linear infinite;
+    opacity:0.7;
+}
+
+/* posizioni diverse */
+.hearts span:nth-child(1){ left:10%; animation-duration:7s; font-size:20px; }
+.hearts span:nth-child(2){ left:20%; animation-duration:9s; font-size:28px; }
+.hearts span:nth-child(3){ left:35%; animation-duration:6s; }
+.hearts span:nth-child(4){ left:50%; animation-duration:10s; font-size:30px; }
+.hearts span:nth-child(5){ left:65%; animation-duration:8s; }
+.hearts span:nth-child(6){ left:80%; animation-duration:7s; }
+.hearts span:nth-child(7){ left:90%; animation-duration:11s; }
+
+/* ANIMAZIONE */
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Sfondo */
+
+/* contenitore */
+.flowers{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+    overflow:hidden;
+
+    z-index:0;
+}
+
+/* base fiore */
+.flower{
+    position:absolute;
+    bottom:-50px;
+
+    font-size:24px;
+    opacity:0.6;
+
+    animation:floatFlowers 10s linear infinite;
+}
+
+/* animazione */
+@keyframes floatFlowers{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    20%{
+        opacity:0.8;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* distribuzione */
+.f1{ left:10%; animation-duration:8s; font-size:26px; }
+.f2{ left:25%; animation-duration:10s; font-size:20px; }
+.f3{ left:40%; animation-duration:7s; font-size:28px; }
+.f4{ left:60%; animation-duration:12s; font-size:22px; }
+.f5{ left:75%; animation-duration:9s; font-size:30px; }
+.f6{ left:90%; animation-duration:11s; font-size:24px; }
+body{
+    background-color:#fba8da;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Barra di navigazione */
+
+
+/* Titolo *//* CENTRATURA PERFETTA */
+.titolo{
+    position:relative;
+    z-index:10;
+
+    height:60vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+
+/* TITOLO SCINTILLANTE */
+.shine{
+    font-size:3.2rem;
+    color:#000000;
+     margin-left: 50px;
+    font-family: "Times New Roman", Times, serif;
+
+
+    position:relative;
+    overflow:hidden;
+
+    text-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+.shine{
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.shine:hover{
+    transform: scale(1.08);
+    color: #0f2f4a;
+
+    text-shadow:
+        0 0 10px rgb(255, 255, 255),
+        0 0 20px rgb(173, 216, 230),
+        0 0 30px rgb(255, 255, 255);
+}
+
+/* SIDEBAR BASE */
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:70px;
+
+    background-color:#000;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding-top:20px;
+
+    transition:0.4s;
+
+    z-index:20;
+}
+
+/* quando passi sopra si espande */
+.sidebar:hover{
+    width:200px;
+}
+
+/* hamburger */
+.menu-toggle{
+    font-size:26px;
+    margin-bottom:40px;
+    cursor:pointer;
+}
+
+/* link */
+.sidebar a{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:15px;
+    text-decoration:none;
+    color:white;
+
+    transition:0.3s;
+}
+
+/* icone */
+.sidebar span{
+    font-size:22px;
+    min-width:40px;
+    text-align:center;
+}
+
+/* testo nascosto quando chiusa */
+.sidebar p{
+    opacity:0;
+    transition:0.3s;
+    white-space:nowrap;
+}
+
+/* testo visibile quando espansa */
+.sidebar:hover p{
+    opacity:1;
+}
+
+/* hover effetto */
+.sidebar a:hover{
+    background-color:#111;
+}
+/* CONTAINER */
+.card-container{
+    position:relative;
+    height:600px;
+    margin-right: 100px;
+}
+
+/* CARD BASE QUADRATA */
+.card{
+    width:220px;
+    height:220px;
+    position:absolute;
+    perspective:1000px;
+}
+/* FOTO SINISTRA */
+.left-photo{
+    top:180px;
+    left:120px;
+
+    transform:rotate(-8deg);
+
+    animation-delay:0.5s;
+}
+
+/* bottone */
+
+.button-area{
+    text-align:center;
+    
+    margin-left:90px;
+    
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    
+}
+
+.love-zone{
+    position:relative;
+    transform: translateY(-100px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* contenitore foto sopra bottone */
+.mini-photos-btn{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+}
+
+/* mini foto */
+.mini-btn{
+    position:absolute;
+    width:95px;
+    height:95px;
+    object-fit:cover;
+    border-radius:12px;
+    
+    animation:floatMini 4s ease-in-out infinite;
+}
+
+/* POSIZIONI ATTORNO AL BOTTONE */
+
+/* sinistra bassa */
+.m1{
+    top:70%;
+    left:20%;
+}
+
+/* destra bassa */
+.m2{
+    top:70%;
+    left:80%;
+}
+
+/* sopra sinistra */
+.m3{
+    top:10%;
+    left:30%;
+}
+
+/* sopra destra */
+.m4{
+    top:10%;
+    left:70%;
+}
+
+/* animazione */
+@keyframes floatMini{
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-10px) rotate(3deg);
+    }
+    100%{
+        transform:translateY(0) rotate(0deg);
+    }
+}
+/* bottoni */
+.button-area button{
+    padding:15px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d88;
+    color:rgb(255, 255, 255);
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* colori diversi */
+.button-area button:first-child{
+    background:#ff4d88;
+}
+.aa{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left:95px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* hover */
+.button-area button:hover{
+    transform:scale(1.1);
+}
+
+/* contenitore cuori */
+.hearts-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:999;
+}
+/* emoji */
+.emoji-container{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+    overflow:hidden;
+
+    z-index:999;
+}
+
+.emoji{
+    position:absolute;
+    top:-50px;
+
+    font-size:24px;
+
+    animation:fallEmoji linear forwards;
+}
+
+@keyframes fallEmoji{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+/* FOTO CENTRALE */
+.center-photo{
+    top:50px;
+    left:50%;
+
+    width:150px;
+    height:150px;
+
+    transform:translateX(-50%) rotate(5deg);
+
+    animation-delay:1s;
+}
+/* POSIZIONI SPARSE */
+.c1{
+    top:40px;
+    left:20%;
+    transform:rotate(-5deg);
+}
+
+.c2{
+    top:200px;
+    left:50%;
+    transform:rotate(8deg);
+}
+
+.c3{
+    top:90px;
+    left:75%;
+    transform:rotate(-10deg);
+}
+
+/* FLIP */
+.card-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transition:transform 0.8s;
+    transform-style:preserve-3d;
+}
+
+.card:hover .card-inner{
+    transform:rotateY(180deg);
+   
+}
+.zoom{
+    transform:scale(1.3);
+}
+.floating-photo{
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+   
+
+    top:120px;
+    right:120px;
+
+    animation:float 4s ease-in-out infinite;
+
+    transform:rotate(8deg);
+}
+@keyframes float{
+    0%{
+        transform:translateY(0px) rotate(8deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(10deg);
+    }
+
+    100%{
+        transform:translateY(0px) rotate(8deg);
+    }
+}
+/* FRONT / BACK */
+.card-front, .card-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:15px;
+    backface-visibility:hidden;
+   
+}
+
+/* IMMAGINE */
+.card-front img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:15px;
+   
+}
+
+/* RETRO */
+.card-back{
+    background:#111;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:10px;
+  transform:scale(1.25);
+    transform:rotateY(180deg);
+    font-family:"Times New Roman", serif;
+}
+/* CONTENITORE STICKER */
+.stickers{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:5;
+}
+
+/* STILE BASE */
+.stickers span{
+    position:absolute;
+    font-size:28px;
+    opacity:0.85;
+    animation:floatSticker 6s ease-in-out infinite;
+}
+
+/* POSIZIONI RANDOM */
+.s1{ top:15%; left:10%; font-size:30px; animation-duration:7s; }
+.s2{ top:70%; left:5%; font-size:35px; animation-duration:8s; }
+.s3{ top:20%; left:80%; font-size:25px; animation-duration:6s; }
+.s4{ top:60%; left:85%; font-size:32px; animation-duration:9s; }
+.s5{ top:40%; left:50%; font-size:40px; animation-duration:10s; }
+.s6{ top:80%; left:40%; font-size:28px; animation-duration:7s; }
+.s7{ top:10%; left:45%; font-size:26px; animation-duration:6s; }
+
+/* ANIMAZIONE LEGGERA */
+@keyframes floatSticker{
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-10px) rotate(10deg);
+    }
+    100%{
+        transform:translateY(0) rotate(0deg);
+    }
+}
+#mainTitle{
+    transition: all 0.5s ease;
+    text-align:center;
+}
+
+/* stato dopo scroll */
+#mainTitle.small{
+    position:fixed;
+    top:35px;
+    left:50%;
+    transform:translateX(-50%);
+    
+    font-size:1.5rem;
+    color:#1f3b5b;
+
+    z-index:100;
+    text-shadow:0 0 10px rgba(255,255,255,0.6);
+}
+
+/* bottone */
+
+/* singolo cuore */
+.heart{
+    position:absolute;
+    top:-50px;
+    animation:fall linear forwards;
+    opacity:0.9;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* TITOLO CENTRATO */
+.page-title{
+    margin-top:40px;
+    text-align:center;
+    margin-left:70px; /* spazio sidebar */
+}
+
+.page-title h1{
+    font-size:2.5rem;
+    color:#1f3b5b;
+}
+
+.page-title p{
+    color:#555;
+    margin-top:10px;
+}
+
+/* GRIGLIA FOTO */
+.photo-grid{
+    margin-top:40px;
+    margin-left:70px;
+
+    padding:20px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:15px;
+}
+
+/* FOTO */
+.photo-grid img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+
+    transition:0.3s;
+}
+
+.photo-grid img:hover{
+    transform:scale(1.07);
+}
+
+/* bottone area */
+
+
+/* contenitore cuori */
+.hearts-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:999;
+}
+
+/* STELLE */
+.stars-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:999;
+}
+
+.star{
+    position:absolute;
+    top:-50px;
+    font-size:20px;
+    animation:fallStars linear forwards;
+    opacity:0.9;
+}
+
+@keyframes fallStars{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* contenitore */
