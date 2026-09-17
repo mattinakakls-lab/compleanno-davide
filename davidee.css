@@ -1,0 +1,25 @@
+.stars span{
+
+position:absolute;
+width:5px;
+height:5px;
+background:white;
+border-radius:50%;
+
+animation:move 5s linear infinite;
+
+}
+
+
+@keyframes move{
+
+from{
+transform:translateY(100vh);
+}
+
+to{
+transform:translateY(-10vh);
+}
+
+}
+.shine:hover{ transform: scale(1.08); color: #0f2f4a; text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(173, 216, 230), 0 0 30px rgb(255, 255, 255); } /* SIDEBAR BASE */ .sidebar{ position:fixed; top:0; left:0; height:100vh; width:70px; background-color:#000; color:white; display:flex; flex-direction:column; align-items:center; padding-top:20px; transition:0.4s; z-index:20; } /* quando passi sopra si espande */ .sidebar:hover{ width:200px; } /* hamburger */ .menu-toggle{ font-size:26px; margin-bottom:40px; cursor:pointer; } /* link */ .sidebar a{ width:100%; display:flex; align-items:center; gap:15px; padding:15px; text-decoration:none; color:white; transition:0.3s; } /* icone */ .sidebar span{ font-size:22px; min-width:40px; text-align:center; } /* testo nascosto quando chiusa */ .sidebar p{ opacity:0; transition:0.3s; white-space:nowrap; } /* testo visibile quando espansa */ .sidebar:hover p{ opacity:1; } *{ margin:0; padding:0; box-sizing:border-box; } *{ margin:0; padding:0; box-sizing:border-box; } body{ height:100vh; overflow:hidden; background: radial-gradient(circle,#260018,#000); font-family:Arial; color:white; } .container{ height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; } button{ padding:20px 60px; font-size:30px; border:none; border-radius:30px; background:#ff2678; color:white; cursor:pointer; box-shadow: 0 0 20px #ff2678, 0 0 60px #ff2678; transition:.4s; } button:hover{ transform:scale(1.15); } #surprise{ display:none; } .number{ font-size:300px; font-weight:bold; color:#ff4fa3; text-shadow: 0 0 10px white, 0 0 30px #ff0080, 0 0 80px #ff0080, 0 0 150px #ff0080; animation:pulse 1s infinite alternate; } h2{ font-size:50px; margin-top:-30px; } @keyframes pulse{ from{ transform:scale(1); } to{ transform:scale(1.1); } } /* particelle */ .stars span{ position:absolute; width:5px; height:5px; background:white; border-radius:50%; animation:move 5s linear infinite; } @keyframes move{ from{ transform:translateY(100vh); opacity:0; } to{ transform:translateY(-10vh); opacity:1; } }

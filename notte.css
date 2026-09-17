@@ -1,0 +1,1049 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 70px;
+
+    background-color: #000;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 20px;
+
+    transition: 0.4s;
+
+    z-index: 100;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+
+/* hamburger */
+
+.menu-toggle {
+    font-size: 26px;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+
+/* link */
+
+.sidebar a {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    text-decoration: none;
+    color: white;
+
+    transition: 0.3s;
+}
+
+
+/* icone */
+
+.sidebar span {
+    font-size: 22px;
+
+    min-width: 40px;
+
+    text-align: center;
+}
+
+
+/* testo nascosto */
+
+.sidebar p {
+    opacity: 0;
+
+    transition: 0.3s;
+
+    white-space: nowrap;
+}
+
+
+/* testo visibile */
+
+.sidebar:hover p {
+    opacity: 1;
+}
+
+
+/* hover */
+
+.sidebar a:hover {
+    background-color: #111;
+}
+
+
+/* =========================
+   CIELO NOTTURNO
+========================= */
+
+.night-sky {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #000000,
+            #05000d,
+            #100020
+        );
+}
+
+
+/* =========================
+   LUNA
+========================= */
+
+.moon {
+    position: absolute;
+
+    top: 80px;
+    right: 150px;
+
+    width: 160px;
+    height: 160px;
+
+    background: #fff5c7;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px #fff5c7,
+        0 0 35px rgba(255, 245, 199, .5);
+
+    cursor: pointer;
+
+    transition: .5s;
+
+    z-index: 3;
+}
+
+.moon:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 25px #fff5c7,
+        0 0 60px rgba(255, 245, 199, .7);
+}
+
+
+/* =========================
+   STELLE FISSE
+========================= */
+
+.stars span {
+    position: absolute;
+
+    color: white;
+
+    font-size: 22px;
+
+    animation: twinkle 2.5s infinite alternate;
+
+    text-shadow:
+        0 0 8px white,
+        0 0 15px white;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+
+.stars span:nth-child(1) {
+    top: 10%;
+    left: 12%;
+}
+
+.stars span:nth-child(2) {
+    top: 18%;
+    left: 35%;
+}
+
+.stars span:nth-child(3) {
+    top: 12%;
+    left: 65%;
+}
+
+.stars span:nth-child(4) {
+    top: 30%;
+    left: 85%;
+}
+
+.stars span:nth-child(5) {
+    top: 45%;
+    left: 20%;
+}
+
+.stars span:nth-child(6) {
+    top: 40%;
+    left: 55%;
+}
+
+.stars span:nth-child(7) {
+    top: 70%;
+    left: 10%;
+}
+
+.stars span:nth-child(8) {
+    top: 65%;
+    left: 45%;
+}
+
+.stars span:nth-child(9) {
+    top: 75%;
+    left: 80%;
+}
+
+.stars span:nth-child(10) {
+    top: 25%;
+    left: 90%;
+}
+
+.stars span:nth-child(11) {
+    top: 55%;
+    left: 75%;
+}
+
+.stars span:nth-child(12) {
+    top: 82%;
+    left: 60%;
+}
+
+.stars span:nth-child(13) {
+    top: 50%;
+    left: 40%;
+}
+
+.stars span:nth-child(14) {
+    top: 15%;
+    left: 80%;
+}
+
+.stars span:nth-child(15) {
+    top: 85%;
+    left: 30%;
+}
+
+
+@keyframes twinkle {
+
+    from {
+        opacity: .4;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* =========================
+   ⭐ STELLE DELLA NOSTRA STORIA
+========================= */
+
+.story-stars {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 8;
+
+    pointer-events: none;
+}
+
+
+.story-star {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    pointer-events: auto;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+
+/* stella */
+
+.star-icon {
+    display: block;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    color: white;
+
+    filter:
+        drop-shadow(0 0 6px white)
+        drop-shadow(0 0 15px white);
+
+    animation:
+        storyTwinkle 2s infinite alternate;
+
+    transition: .4s;
+}
+
+
+/* data */
+
+.star-date {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    color: white;
+
+    white-space: nowrap;
+
+    opacity: .9;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 10px #8b5cff;
+
+    transition: .4s;
+}
+
+
+/* hover */
+
+.story-star:hover {
+    transform: scale(1.25);
+}
+
+.story-star:hover .star-icon {
+
+    filter:
+        drop-shadow(0 0 10px white)
+        drop-shadow(0 0 25px #ff7bc2)
+        drop-shadow(0 0 40px #8b5cff);
+}
+
+.story-star:hover .star-date {
+    color: #ffb7df;
+
+    text-shadow:
+        0 0 8px #ff5fa2,
+        0 0 18px #8b5cff;
+}
+
+
+@keyframes storyTwinkle {
+
+    from {
+        transform: scale(.9);
+        opacity: .7;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   POSIZIONE DELLE 5 STELLE
+========================= */
+
+
+/* 16 settembre */
+
+.event-1 {
+    top: 22%;
+    left: 17%;
+}
+
+
+/* 13 ottobre */
+
+.event-2 {
+    top: 35%;
+    left: 37%;
+}
+
+
+/* 18 ottobre */
+
+.event-3 {
+    top: 18%;
+    left: 53%;
+}
+
+
+/* 31 ottobre 2008 */
+
+.event-4 {
+    top: 48%;
+    left: 68%;
+}
+
+
+/* 31 ottobre 2025 */
+
+.event-5 {
+    top: 30%;
+    left: 82%;
+}
+
+
+/* =========================
+   STELLE CADENTI
+========================= */
+
+.shoot {
+    position: absolute;
+
+    width: 140px;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            transparent
+        );
+
+    transform: rotate(-45deg);
+
+    opacity: 0;
+
+    filter:
+        drop-shadow(0 0 8px white);
+
+    animation:
+        shooting 5s linear infinite;
+}
+
+
+.s1 {
+    top: 5%;
+    left: 90%;
+
+    animation-delay: 1s;
+}
+
+
+.s2 {
+    top: 20%;
+    left: 75%;
+
+    animation-delay: 4s;
+}
+
+
+.s3 {
+    top: 0;
+    left: 55%;
+
+    animation-delay: 7s;
+}
+
+
+.s4 {
+    top: 30%;
+    left: 95%;
+
+    animation-delay: 10s;
+}
+
+
+@keyframes shooting {
+
+    0% {
+        transform:
+            translate(0, 0)
+            rotate(-45deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translate(-450px, 450px)
+            rotate(-45deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+.mountains {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+    height: 180px;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
+
+.mountain {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 220px solid transparent;
+    border-right: 220px solid transparent;
+
+    border-bottom: 190px solid #030303;
+}
+
+
+.mountain.one {
+    left: -100px;
+}
+
+
+.mountain.two {
+    left: 280px;
+
+    border-bottom-color: #080808;
+
+    transform: scale(1.1);
+}
+
+
+.mountain.three {
+    right: -140px;
+
+    border-bottom-color: #010101;
+}
+
+/* =========================
+   TESTO CENTRALE
+========================= */
+
+.content {
+    position: absolute;
+
+    top: 65%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 7;
+}
+
+
+.content h1 {
+
+    font-size: 55px;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #ff7bc2,
+        0 0 30px #ff5fa2;
+}
+
+
+.content p {
+
+    font-size: 22px;
+
+    color: #ddd;
+}
+
+
+/* =========================
+   PULSANTE
+========================= */
+
+button {
+
+    margin-top: 30px;
+
+    padding: 18px 45px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 20px;
+
+    background:
+        linear-gradient(
+            45deg,
+            #ff5fa2,
+            #8b5cff
+        );
+
+    box-shadow:
+        0 0 20px #ff5fa2;
+
+    transition: .4s;
+}
+
+
+button:hover {
+
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 40px #ff5fa2;
+}
+
+
+/* =========================
+   MESSAGGIO
+========================= */
+
+#message {
+
+    margin-top: 30px;
+
+    font-size: 30px;
+
+    color: #ffb7df;
+
+    text-shadow:
+        0 0 15px #ff5fa2;
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    transition: .8s;
+}
+
+
+#message.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+   🌌 FINESTRA DELLA STORIA
+========================= */
+
+.story-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(0, 0, 0, .82);
+
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity .5s,
+        visibility .5s;
+
+    z-index: 200;
+}
+
+
+/* finestra aperta */
+
+.story-modal.show {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================
+   BOX
+========================= */
+
+.story-box {
+
+    position: relative;
+
+    width: min(850px, 90%);
+
+    max-height: 90vh;
+
+    overflow: auto;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #08000f,
+            #150025
+        );
+
+    border: 1px solid rgba(255, 255, 255, .2);
+
+    box-shadow:
+        0 0 30px rgba(255, 95, 162, .4),
+        0 0 70px rgba(139, 92, 255, .25);
+
+    text-align: center;
+
+    color: white;
+
+    transform:
+        scale(.8)
+        translateY(30px);
+
+    transition:
+        transform .6s;
+}
+
+
+.story-modal.show .story-box {
+
+    transform:
+        scale(1)
+        translateY(0);
+}
+
+
+/* =========================
+   FOTO
+========================= */
+
+.story-photo {
+
+    width: 100%;
+
+    height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #000;
+
+    box-shadow:
+        0 0 25px rgba(255, 255, 255, .15);
+}
+
+
+.story-photo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        opacity .5s,
+        transform .8s;
+}
+
+
+/* =========================
+   INFORMAZIONI
+========================= */
+
+.story-info {
+
+    padding: 15px 20px 5px;
+}
+
+
+#story-date {
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    color: #ffb7df;
+
+    text-shadow:
+        0 0 10px #ff5fa2;
+
+    margin-top: 5px;
+}
+
+
+#story-title {
+
+    margin:
+        10px 0;
+
+    font-size: 30px;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #ff5fa2;
+}
+
+
+#story-text {
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    color: #ddd;
+
+    max-width: 650px;
+
+    margin:
+        0 auto 10px;
+}
+
+
+/* =========================
+   CHIUDI
+========================= */
+
+#close-story {
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, .65);
+
+    font-size: 20px;
+
+    z-index: 10;
+
+    box-shadow: none;
+}
+
+
+#close-story:hover {
+
+    background: #ff5fa2;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================
+   CONTINUA
+========================= */
+
+#next-story {
+
+    margin-top: 15px;
+
+    padding:
+        13px 30px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .moon {
+
+        width: 110px;
+        height: 110px;
+
+        top: 70px;
+        right: 50px;
+    }
+
+
+    .story-date {
+
+        font-size: 9px;
+    }
+
+
+    .star-icon {
+
+        font-size: 27px;
+    }
+
+
+    .story-photo {
+
+        height: 300px;
+    }
+
+
+    #story-title {
+
+        font-size: 23px;
+    }
+
+
+    #story-text {
+
+        font-size: 15px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .sidebar {
+
+        width: 55px;
+    }
+
+
+    .sidebar:hover {
+
+        width: 160px;
+    }
+
+
+    .story-star {
+
+        transform: scale(.85);
+    }
+
+
+    .event-1 {
+        left: 12%;
+    }
+
+    .event-2 {
+        left: 32%;
+    }
+
+    .event-3 {
+        left: 50%;
+    }
+
+    .event-4 {
+        left: 65%;
+    }
+
+    .event-5 {
+        left: 78%;
+    }
+
+
+    .story-box {
+
+        width: 94%;
+
+        padding: 12px;
+    }
+
+
+    .story-photo {
+
+        height: 240px;
+    }
+
+}

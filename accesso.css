@@ -1,0 +1,443 @@
+/* RESET */
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow:hidden;
+
+}
+
+
+
+/* PAGINA NERA */
+
+.login-page{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#000;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+/* CUORI VAGANTI */
+
+.login-page::before{
+
+    content:"❤️  💕  ❤️  ✨  💖  ❤️  💗  ✨";
+
+    position:absolute;
+
+    width:200%;
+
+    top:10%;
+
+    left:-50%;
+
+    font-size:45px;
+
+    opacity:.7;
+
+    animation:cuori 15s linear infinite;
+
+    filter:drop-shadow(0 0 15px #ff4f9a);
+
+}
+
+
+
+
+.login-page::after{
+
+    content:"💖  ❤️  ✨  💕  ❤️  💗";
+
+    position:absolute;
+
+    width:200%;
+
+    bottom:10%;
+
+    left:-50%;
+
+    font-size:35px;
+
+    opacity:.5;
+
+    animation:cuori2 18s linear infinite;
+
+    filter:drop-shadow(0 0 15px #ff5fa2);
+
+}
+
+
+
+
+
+@keyframes cuori{
+
+
+    from{
+
+        transform:translateX(-30%) translateY(0);
+
+    }
+
+
+    to{
+
+        transform:translateX(30%) translateY(80px);
+
+    }
+
+
+}
+
+
+
+@keyframes cuori2{
+
+
+    from{
+
+        transform:translateX(30%) translateY(0);
+
+    }
+
+
+    to{
+
+        transform:translateX(-30%) translateY(-80px);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* BOX PASSWORD */
+
+
+.login-box{
+
+
+    position:relative;
+
+    z-index:2;
+
+
+    width:420px;
+
+
+    padding:45px;
+
+
+    text-align:center;
+
+
+    background:
+
+    rgba(20,20,20,.9);
+
+
+    border-radius:35px;
+
+
+    border:2px solid #ff5fa2;
+
+
+
+    box-shadow:
+
+
+    0 0 20px #ff5fa2,
+
+    0 0 60px #ff007f;
+
+
+
+    animation:entrata 1s ease;
+
+
+}
+
+
+
+
+
+@keyframes entrata{
+
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.7);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+/* CUORE CENTRALE */
+
+
+.cuore{
+
+    font-size:80px;
+
+    animation:pulse 1.5s infinite;
+
+    filter:
+
+    drop-shadow(0 0 20px #ff0055);
+
+}
+
+
+
+
+@keyframes pulse{
+
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+
+
+
+
+/* TITOLO */
+
+
+h1{
+
+    color:#ff5fa2;
+
+    font-size:35px;
+
+
+    text-shadow:
+
+
+    0 0 10px #ff5fa2,
+
+    0 0 25px #ff007f;
+
+
+}
+
+
+
+
+
+
+.login-box p{
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+
+
+
+
+
+/* INPUT */
+
+
+input{
+
+
+    width:100%;
+
+
+    padding:15px;
+
+
+    margin-top:20px;
+
+
+    border-radius:30px;
+
+
+    border:2px solid #ff5fa2;
+
+
+    background:#111;
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    font-size:18px;
+
+
+    outline:none;
+
+
+}
+
+
+
+input::placeholder{
+
+    color:#aaa;
+
+}
+
+
+
+
+
+input:focus{
+
+    box-shadow:
+
+    0 0 20px #ff5fa2;
+
+}
+
+
+
+
+
+
+
+/* BOTTONE */
+
+
+button{
+
+
+    margin-top:25px;
+
+
+    padding:15px 50px;
+
+
+    border:none;
+
+
+    border-radius:40px;
+
+
+    cursor:pointer;
+
+
+    color:white;
+
+
+    font-size:20px;
+
+
+    font-weight:bold;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        45deg,
+
+        #ff0055,
+
+        #ff7bbd
+
+    );
+
+
+
+    box-shadow:
+
+
+    0 0 20px #ff0055;
+
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+button:hover{
+
+
+    transform:scale(1.1);
+
+
+    box-shadow:
+
+
+    0 0 40px #ff007f;
+
+
+}
+
+
+
+
+
+/* ERRORE */
+
+
+#errore{
+
+
+    color:#ff4d7d;
+
+
+}

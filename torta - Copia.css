@@ -1,0 +1,678 @@
+/* RESET */
+.pp{
+    color:#000
+}
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+}
+
+
+.subtitle{
+    color:black;
+}
+
+
+/* SFONDO */
+
+.animated-bg{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        -45deg,
+        #ffd6e7,
+        #d9eaff,
+        #eadcff,
+        #fff0c9,
+        #d8ffe5
+    );
+
+    background-size:400% 400%;
+
+    animation:backgroundMove 15s infinite;
+
+    overflow-x:hidden;
+
+}
+
+
+
+@keyframes backgroundMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+
+
+/* SIDEBAR */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    height:100vh;
+
+    width:70px;
+
+    background:#000;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding-top:20px;
+
+    transition:.4s;
+
+    z-index:20;
+
+}
+
+
+
+.sidebar:hover{
+
+    width:200px;
+
+}
+
+
+
+.menu-toggle{
+
+    font-size:28px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.sidebar a{
+
+    width:100%;
+
+    padding:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:white;
+
+    text-decoration:none;
+
+}
+
+
+
+.sidebar a:hover{
+
+    background:#222;
+
+}
+
+
+
+.sidebar span{
+
+    font-size:23px;
+
+    min-width:40px;
+
+    text-align:center;
+
+}
+
+
+
+.sidebar p{
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+
+
+.sidebar:hover p{
+
+    opacity:1;
+
+}
+
+
+
+
+
+/* TORTA SEZIONE */
+
+.cake-section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+}
+
+
+
+.cake-section h1{
+
+    font-size:45px;
+
+    text-shadow:
+
+    0 0 10px #ff8fcf,
+
+    0 0 25px #ff5fa2;
+
+}
+
+
+
+
+.subtitle{
+
+    font-size:20px;
+
+
+}
+
+
+
+
+/* BRILLANTINI */
+
+.cake-section::before{
+
+    content:"✨ ✨ ✨ ✨ ✨";
+
+    position:absolute;
+
+    top:20%;
+
+    font-size:35px;
+
+    animation:sparkle 3s infinite;
+
+}
+
+
+
+@keyframes sparkle{
+
+    0%,100%{
+
+        opacity:.3;
+
+        transform:scale(.8);
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+
+
+
+/* TORTA */
+
+.cake{
+
+    position:relative;
+
+    width:330px;
+
+    height:330px;
+
+    margin-top:40px;
+
+}
+
+
+
+
+
+/* PIATTO */
+
+.plate{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:10px;
+
+    width:310px;
+
+    height:35px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:0 15px 30px #0005;
+
+}
+
+
+
+
+
+/* STRATI */
+
+.cake-layer{
+
+    position:absolute;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    inset 0 -10px 15px #0003,
+
+    0 15px 25px #0005;
+
+}
+
+
+
+.layer-one{
+
+    bottom:55px;
+
+    left:35px;
+
+    width:260px;
+
+    height:90px;
+
+    background:linear-gradient(#ffb7d9,#ff5fa2);
+
+}
+
+
+
+.layer-two{
+
+    bottom:120px;
+
+    left:45px;
+
+    width:240px;
+
+    height:80px;
+
+    background:linear-gradient(#fff1f8,#ffc1df);
+
+}
+
+
+
+.layer-three{
+
+    bottom:175px;
+
+    left:55px;
+
+    width:220px;
+
+    height:60px;
+
+    background:linear-gradient(white,#ffd6ec);
+
+}
+
+
+
+
+
+/* NUMERO 18 CANDELA */
+
+.number-candles{
+
+    position:absolute;
+
+    bottom:215px;
+
+    left:120px;
+
+    display:flex;
+
+    gap:5px;
+
+    z-index:20;
+
+}
+
+
+
+.candle-number{
+
+    position:relative;
+
+    font-size:90px;
+
+    font-weight:bold;
+
+    font-family:Arial,sans-serif;
+
+    line-height:1;
+
+    color:#ff5fa2;
+
+
+    text-shadow:
+
+    0 0 5px white,
+
+    0 0 20px #ff7bc2;
+
+}
+
+
+
+/* EFFETTO CERA */
+
+.candle-number::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+
+    background:
+
+    repeating-linear-gradient(
+
+        45deg,
+
+        transparent,
+
+        transparent 12px,
+
+        rgba(255,255,255,.5) 13px,
+
+        transparent 18px
+
+    );
+
+}
+
+
+
+/* FIAMMA SOPRA NUMERI */
+
+.candle-number .flame{
+
+    position:absolute;
+
+    top:-35px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+
+    width:18px;
+
+    height:30px;
+
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        white,
+
+        yellow,
+
+        orange
+
+    );
+
+
+    border-radius:50%;
+
+
+    box-shadow:
+
+    0 0 15px yellow,
+
+    0 0 30px orange;
+
+
+    animation:flicker .7s infinite alternate;
+
+}
+
+
+
+@keyframes flicker{
+
+    from{
+
+        transform:translateX(-50%) scale(.8);
+
+    }
+
+
+    to{
+
+        transform:translateX(-50%) scale(1.2);
+
+    }
+
+}
+
+
+
+
+
+/* PULSANTE */
+
+#spegnicandeline{
+
+    margin-top:40px;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+
+    background:
+
+    linear-gradient(
+
+        45deg,
+
+        #ff5fa2,
+
+        #ff9bd0
+
+    );
+
+
+    box-shadow:
+
+    0 0 20px #ff8dcc;
+
+
+    transition:.3s;
+
+}
+
+
+
+#spegnicandeline:hover{
+
+    transform:scale(1.1);
+
+}
+
+
+
+
+
+/* MESSAGGIO */
+
+.birthday-message{
+
+    display:none;
+
+    margin-top:30px;
+
+}
+
+
+
+.birthday-message h2{
+
+    font-size:40px;
+
+    text-shadow:
+
+    0 0 20px #ff6bb5;
+
+}
+
+
+
+
+
+/* CORIANDOLI */
+
+#coriandoli{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:9999;
+
+}
+
+
+
+.confetti{
+
+    position:absolute;
+
+    top:-30px;
+
+    width:12px;
+
+    height:18px;
+
+    border-radius:3px;
+
+    animation:caduta 3s linear forwards;
+
+}
+
+
+
+
+@keyframes caduta{
+
+
+    0%{
+
+        transform:translateY(0) rotate(0deg);
+
+        opacity:1;
+
+    }
+
+
+    50%{
+
+        transform:translateY(50vh) rotate(360deg);
+
+    }
+
+
+    100%{
+
+        transform:translateY(110vh) rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}

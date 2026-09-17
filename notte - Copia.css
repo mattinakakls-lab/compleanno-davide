@@ -1,0 +1,837 @@
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:70px;
+
+    background-color:#000;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding-top:20px;
+
+    transition:0.4s;
+
+    z-index:20;
+}
+
+/* quando passi sopra si espande */
+.sidebar:hover{
+    width:200px;
+}
+
+/* hamburger */
+.menu-toggle{
+    font-size:26px;
+    margin-bottom:40px;
+    cursor:pointer;
+}
+
+/* link */
+.sidebar a{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:15px;
+    text-decoration:none;
+    color:white;
+
+    transition:0.3s;
+}
+
+/* icone */
+.sidebar span{
+    font-size:22px;
+    min-width:40px;
+    text-align:center;
+}
+
+/* testo nascosto quando chiusa */
+.sidebar p{
+    opacity:0;
+    transition:0.3s;
+    white-space:nowrap;
+}
+
+/* testo visibile quando espansa */
+.sidebar:hover p{
+    opacity:1;
+}
+
+/* hover effetto */
+.sidebar a:hover{
+    background-color:#111;
+}
+/* RESET */
+
+*{
+    box-sizing:border-box;
+}
+
+
+/* RESET */
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+
+    margin:0;
+
+    overflow:hidden;
+
+    font-family:'Poppins', sans-serif;
+
+}
+
+
+
+
+
+/* =========================
+   CIELO NOTTURNO
+========================= */
+
+
+.night-sky{
+
+    width:100vw;
+
+    height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+
+    background:
+
+    linear-gradient(
+
+        to bottom,
+
+        #000000,
+
+        #05000d,
+
+        #100020
+
+    );
+
+}
+
+
+
+
+
+/* =========================
+   LUNA
+========================= */
+
+
+.moon{
+
+    position:absolute;
+
+    top:80px;
+
+    right:150px;
+
+
+    width:160px;
+
+    height:160px;
+
+
+    background:#fff5c7;
+
+
+    border-radius:50%;
+
+
+    box-shadow:
+
+    0 0 15px #fff5c7,
+
+    0 0 35px rgba(255,245,199,.5);
+
+
+}
+
+
+
+
+
+/* =========================
+   STELLE FISSE
+========================= */
+
+
+.stars span{
+
+    position:absolute;
+
+
+    color:white;
+
+
+    font-size:22px;
+
+
+    animation:twinkle 2.5s infinite alternate;
+
+
+    text-shadow:
+
+    0 0 8px white,
+
+    0 0 15px white;
+
+
+}
+
+
+
+
+
+.stars span:nth-child(1){
+
+top:10%;
+left:12%;
+
+}
+
+
+.stars span:nth-child(2){
+
+top:18%;
+left:35%;
+
+}
+
+
+.stars span:nth-child(3){
+
+top:12%;
+left:65%;
+
+}
+
+
+.stars span:nth-child(4){
+
+top:30%;
+left:85%;
+
+}
+
+
+.stars span:nth-child(5){
+
+top:45%;
+left:20%;
+
+}
+
+
+.stars span:nth-child(6){
+
+top:40%;
+left:55%;
+
+}
+
+
+.stars span:nth-child(7){
+
+top:70%;
+left:10%;
+
+}
+
+
+.stars span:nth-child(8){
+
+top:65%;
+left:45%;
+
+}
+
+
+.stars span:nth-child(9){
+
+top:75%;
+left:80%;
+
+}
+
+
+.stars span:nth-child(10){
+
+top:25%;
+left:90%;
+
+}
+
+
+.stars span:nth-child(11){
+
+top:55%;
+left:75%;
+
+}
+
+
+.stars span:nth-child(12){
+
+top:82%;
+left:60%;
+
+}
+
+
+.stars span:nth-child(13){
+
+top:50%;
+left:40%;
+
+}
+
+
+.stars span:nth-child(14){
+
+top:15%;
+left:80%;
+
+}
+
+
+.stars span:nth-child(15){
+
+top:85%;
+left:30%;
+
+}
+
+
+
+
+
+@keyframes twinkle{
+
+
+from{
+
+opacity:.4;
+
+transform:scale(.8);
+
+}
+
+
+
+to{
+
+opacity:1;
+
+transform:scale(1.2);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   STELLE CADENTI
+========================= */
+
+
+.shoot{
+
+
+    position:absolute;
+
+
+    width:140px;
+
+    height:2px;
+
+
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        white,
+
+        transparent
+
+    );
+
+
+
+    transform:rotate(-45deg);
+
+
+
+    opacity:0;
+
+
+
+    filter:
+
+    drop-shadow(0 0 8px white);
+
+
+
+    animation:shooting 5s linear infinite;
+
+
+}
+
+
+
+
+
+
+.s1{
+
+    top:5%;
+
+    left:90%;
+
+    animation-delay:1s;
+
+}
+
+
+
+.s2{
+
+    top:20%;
+
+    left:75%;
+
+    animation-delay:4s;
+
+}
+
+
+
+.s3{
+
+    top:0;
+
+    left:55%;
+
+    animation-delay:7s;
+
+}
+
+
+
+.s4{
+
+    top:30%;
+
+    left:95%;
+
+    animation-delay:10s;
+
+}
+
+
+
+
+
+
+
+@keyframes shooting{
+
+
+0%{
+
+    transform:
+
+    translate(0,0)
+
+    rotate(-45deg);
+
+
+    opacity:0;
+
+}
+
+
+
+
+10%{
+
+    opacity:1;
+
+}
+
+
+
+
+100%{
+
+
+    transform:
+
+    translate(-450px,450px)
+
+    rotate(-45deg);
+
+
+
+    opacity:0;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   MONTAGNE
+========================= */
+
+
+.mountains{
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+
+    width:100%;
+
+
+    height:300px;
+
+
+}
+
+
+
+
+
+.mountain{
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+
+
+    width:0;
+
+    height:0;
+
+
+
+    border-left:260px solid transparent;
+
+    border-right:260px solid transparent;
+
+
+    border-bottom:320px solid #030303;
+
+
+}
+
+
+
+
+
+.mountain.one{
+
+    left:-120px;
+
+}
+
+
+
+
+.mountain.two{
+
+
+    left:280px;
+
+
+    border-bottom-color:#080808;
+
+
+    transform:scale(1.2);
+
+
+}
+
+
+
+
+
+.mountain.three{
+
+
+    right:-160px;
+
+
+    border-bottom-color:#010101;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   TESTO CENTRALE
+========================= */
+
+
+.content{
+
+
+    position:absolute;
+
+
+    top:50%;
+
+
+    left:50%;
+
+
+    transform:translate(-50%,-50%);
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    z-index:5;
+
+
+}
+
+
+
+
+
+.content h1{
+
+
+    font-size:55px;
+
+
+    color:white;
+
+
+
+    text-shadow:
+
+
+    0 0 15px #ff7bc2,
+
+    0 0 30px #ff5fa2;
+
+
+}
+
+
+
+
+
+.content p{
+
+
+    font-size:22px;
+
+
+    color:#ddd;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   PULSANTE
+========================= */
+
+
+button{
+
+
+    margin-top:30px;
+
+
+
+    padding:18px 45px;
+
+
+
+    border:none;
+
+
+
+    border-radius:50px;
+
+
+
+    cursor:pointer;
+
+
+
+    color:white;
+
+
+
+    font-size:20px;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        45deg,
+
+        #ff5fa2,
+
+        #8b5cff
+
+    );
+
+
+
+
+    box-shadow:
+
+
+    0 0 20px #ff5fa2;
+
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+button:hover{
+
+
+    transform:scale(1.1);
+
+
+
+    box-shadow:
+
+
+    0 0 40px #ff5fa2;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   MESSAGGIO
+========================= */
+
+
+#message{
+
+
+    margin-top:30px;
+
+
+    font-size:30px;
+
+
+    color:#ffb7df;
+
+
+
+    text-shadow:
+
+
+    0 0 15px #ff5fa2;
+
+
+
+    opacity:0;
+
+
+
+    transform:translateY(20px);
+
+
+
+    transition:.8s;
+
+
+}
+
+
+
+
+
+#message.show{
+
+
+    opacity:1;
+
+
+    transform:translateY(0);
+
+
+} 

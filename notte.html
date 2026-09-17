@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La nostra notte 🌙</title>
+
+    <link rel="stylesheet" href="notte.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<div class="sidebar">
+
+    <div class="menu-toggle">☰</div>
+
+    <a href="davide.html">
+        <span>🏠</span>
+        <p>Home</p>
+    </a>
+
+    <a href="foto.html">
+        <span>📸</span>
+        <p>Foto</p>
+    </a>
+
+    <a href="music.html">
+        <span>🎧</span>
+        <p>Musica</p>
+    </a>
+
+    <a href="torta.html">
+        <span>🎂</span>
+        <p>Torta</p>
+    </a>
+
+    <a href="notte.html" id="night-mode">
+        <span>🌙</span>
+        <p>Modalità notte</p>
+    </a>
+
+    <a href="lettera.html">
+        <span>💌</span>
+        <p>Regalino</p>
+    </a>
+
+</div>
+
+
+
+<!-- =========================
+     CIELO
+========================= -->
+
+<div class="night-sky">
+
+
+    <!-- =========================
+         LUNA
+    ========================= -->
+
+    <div class="moon"></div>
+
+
+
+    <!-- =========================
+         STELLE FISSE
+    ========================= -->
+
+    <div class="stars">
+
+        <span>⭐</span>
+        <span>✨</span>
+        <span>⭐</span>
+        <span>✨</span>
+        <span>⭐</span>
+        <span>✨</span>
+        <span>⭐</span>
+        <span>✨</span>
+        <span>⭐</span>
+        <span>✨</span>
+        <span>⭐</span>
+        <span>✨</span>
+        <span>⭐</span>
+        <span>✨</span>
+        <span>⭐</span>
+
+    </div>
+
+
+
+    <!-- =========================
+         STELLE DELLA NOSTRA STORIA
+    ========================= -->
+
+    <div class="story-stars">
+
+
+        <!-- 16 SETTEMBRE 2025 -->
+
+        <div class="story-star event-1"
+             data-date="16 settembre 2025"
+             data-title="Il giorno in cui ci siamo incontrati"
+             data-text= "❤️"
+             data-image="16.jpg">
+
+            <span class="star-icon">⭐</span>
+
+            <span class="star-date">
+                16 SETTEMBRE 2025
+            </span>
+
+        </div>
+
+
+
+        <!-- 13 OTTOBRE 2025 -->
+
+        <div class="story-star event-2"
+             data-date="13 ottobre 2025"
+             data-title="Il nostro primo giro in moto"
+             data-text="🏍️❤️"
+             data-image="13.jpg">
+
+            <span class="star-icon">⭐</span>
+
+            <span class="star-date">
+                13 OTTOBRE 2025
+            </span>
+
+        </div>
+
+
+
+        <!-- 18 OTTOBRE 2025 -->
+
+        <div class="story-star event-3"
+             data-date="18 ottobre 2025"
+             data-title="Il giorno in cui ci siamo messi insieme"
+             data-text="❤️"
+             data-image="18.jpg">
+
+            <span class="star-icon">⭐</span>
+
+            <span class="star-date">
+                18 OTTOBRE 2025
+            </span>
+
+        </div>
+
+
+
+        <!-- 31 OTTOBRE 2008 -->
+
+        <div class="story-star event-4"
+             data-date="31 ottobre 2008"
+             data-title="Il giorno in cui sei nato"
+             data-text="❤️🎂"
+             data-image="312008.jpg">
+
+            <span class="star-icon">⭐</span>
+
+            <span class="star-date">
+                31 OTTOBRE 2008
+            </span>
+
+        </div>
+
+
+
+        <!-- 31 OTTOBRE 2025 -->
+
+        <div class="story-star event-5"
+             data-date="31 ottobre 2025"
+             data-title="Il tuo compleanno"
+             data-text="🎂✨"
+             data-image="31 2025.jpg">
+
+            <span class="star-icon">⭐</span>
+
+            <span class="star-date">
+                31 OTTOBRE 2025
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         STELLE CADENTI
+    ========================= -->
+
+    <div class="shooting-stars">
+
+        <div class="shoot s1"></div>
+
+        <div class="shoot s2"></div>
+
+        <div class="shoot s3"></div>
+
+        <div class="shoot s4"></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         MONTAGNE
+    ========================= -->
+
+    <div class="mountains">
+
+        <div class="mountain one"></div>
+
+        <div class="mountain two"></div>
+
+        <div class="mountain three"></div>
+
+    </div>
+
+
+
+    <!-- =========================
+         TESTO CENTRALE
+    ========================= -->
+
+    <div class="content">
+
+        <button id="starsButton">
+            ⭐ Premi qui
+        </button>
+
+        <div id="message">
+             ❤️
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================
+     FINESTRA DELLA STORIA
+========================= -->
+
+<div id="story-modal" class="story-modal">
+
+
+    <div class="story-box">
+
+
+        <!-- CHIUDI -->
+
+        <button id="close-story">
+            ✕
+        </button>
+
+
+
+        <!-- FOTO -->
+
+        <div class="story-photo">
+
+            <img
+                id="story-image"
+                src=""
+                alt="Foto del cielo">
+
+        </div>
+
+
+
+        <!-- INFORMAZIONI -->
+
+        <div class="story-info">
+
+
+            <div id="story-date"></div>
+
+
+            <h2 id="story-title"></h2>
+
+
+            <p id="story-text"></p>
+
+
+        </div>
+
+
+
+        <!-- CONTINUA -->
+
+        <button id="next-story">
+            ✨ Continua
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="notte.js"></script>
+
+
+</body>
+
+</html>

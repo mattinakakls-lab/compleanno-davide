@@ -1,0 +1,660 @@
+```html
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La nostra playlist ❤️</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="music.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <div class="sidebar">
+
+        <div class="menu-toggle">
+            ☰
+        </div>
+
+
+        <a href="davide.html">
+            <span>🏠</span>
+            <p>Home</p>
+        </a>
+
+
+        <a href="foto.html">
+            <span>📸</span>
+            <p>Foto</p>
+        </a>
+
+
+        <a href="music.html">
+            <span>🎧</span>
+            <p>Musica</p>
+        </a>
+
+
+        <a href="torta.html">
+            <span>🎂</span>
+            <p>Torta</p>
+        </a>
+
+
+        <a href="notte.html" id="night-mode">
+            <span>🌙</span>
+            <p>Modalità notte</p>
+        </a>
+
+
+        <a href="lettera.html">
+            <span>💌</span>
+            <p>Regalino</p>
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PAGINA PLAYLIST
+    ====================================================== -->
+
+    <main class="playlist-page">
+
+
+        <!-- =================================================
+             TITOLO
+        ================================================== -->
+
+        <header class="playlist-header">
+
+            <p class="small-title">
+                LE NOSTRE CANZONI
+            </p>
+
+
+            <h1>
+                La nostra playlist
+            </h1>
+
+
+            <p class="subtitle">
+            </p>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PLAYER PRINCIPALE
+        ================================================== -->
+
+        <section class="music-player">
+
+
+            <!-- =============================================
+                 VINILE + COPERTINA
+            ============================================== -->
+
+            <div class="record-area">
+
+
+                <!-- VINILE -->
+
+                <div
+                    class="vinyl-record"
+                    id="vinyl">
+
+
+                    <div class="vinyl-groove groove-1"></div>
+
+                    <div class="vinyl-groove groove-2"></div>
+
+                    <div class="vinyl-groove groove-3"></div>
+
+                    <div class="vinyl-groove groove-4"></div>
+
+
+                    <!-- ETICHETTA CENTRALE -->
+
+                    <div class="vinyl-label">
+
+                        <span class="vinyl-heart">
+                            ♥
+                        </span>
+
+                    </div>
+
+
+                    <!-- FORO CENTRALE -->
+
+                    <div class="vinyl-hole"></div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     COPERTINA
+                ========================================== -->
+
+                <div class="album-cover">
+
+                    <img
+                        id="album-cover"
+                        src="non.png"
+                        alt="Copertina Non abbiamo età">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 INFORMAZIONI CANZONE
+            ================================================== -->
+
+            <div class="song-info">
+
+
+                <h2 id="song-title">
+                    Non abbiamo età
+                </h2>
+
+
+                <p id="song-artist">
+                    Artista
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MESSAGGIO CANZONE
+            ================================================== -->
+
+            <div class="song-message">
+
+                <p id="song-message-text">
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BARRA PROGRESSO
+            ================================================== -->
+
+            <div class="progress-container">
+
+
+                <span id="current-time">
+                    0:00
+                </span>
+
+
+                <input
+                    type="range"
+                    id="progress-bar"
+                    min="0"
+                    max="100"
+                    value="0"
+                    aria-label="Avanzamento canzone">
+
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CONTROLLI
+            ================================================== -->
+
+            <div class="player-controls">
+
+
+                <!-- PRECEDENTE -->
+
+                <button
+                    id="previous-btn"
+                    class="control-button previous"
+                    aria-label="Canzone precedente">
+
+                    ⏮
+
+                </button>
+
+
+
+                <!-- PLAY / PAUSA -->
+
+                <button
+                    id="play-btn"
+                    class="control-button play"
+                    aria-label="Riproduci">
+
+                    ▶
+
+                </button>
+
+
+
+                <!-- SUCCESSIVA -->
+
+                <button
+                    id="next-btn"
+                    class="control-button next"
+                    aria-label="Canzone successiva">
+
+                    ⏭
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 VOLUME
+            ================================================== -->
+
+            <div class="volume-container">
+
+
+                <span class="volume-icon">
+                    🔊
+                </span>
+
+
+                <input
+                    type="range"
+                    id="volume-bar"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="1"
+                    aria-label="Volume">
+
+            </div>
+<div class="equalizer">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+        </section>
+
+
+
+        <!-- =====================================================
+             ELENCO PLAYLIST
+        ====================================================== -->
+
+        <section class="playlist-section">
+
+
+            <div class="playlist-title">
+
+
+                <h2>
+                    La nostra playlist 🎶
+                </h2>
+
+
+                <p>
+                </p>
+
+            </div>
+
+
+
+            <div class="song-list">
+
+
+
+                <!-- =================================================
+                     CANZONE 01
+                ================================================== -->
+
+                <button
+                    class="playlist-song active"
+                    data-song="0">
+
+
+                    <div class="song-number">
+                        01
+                    </div>
+
+
+                    <img
+                        src="non.png"
+                        alt="Non abbiamo età">
+
+
+                    <div class="song-list-info">
+
+
+                        <strong>
+                            Non abbiamo età
+                        </strong>
+
+
+                        <span>
+                            Artista
+                        </span>
+
+                    </div>
+
+
+                    <span class="song-play-icon">
+                        ▶
+                    </span>
+
+                </button>
+
+
+
+                <!-- =================================================
+                     CANZONE 02
+                ================================================== -->
+
+                <button
+                    class="playlist-song"
+                    data-song="1">
+
+
+                    <div class="song-number">
+                        02
+                    </div>
+
+
+                    <img
+                        src="la.jfif"
+                        alt="La scelta migliore">
+
+
+                    <div class="song-list-info">
+
+
+                        <strong>
+                            La scelta migliore
+                        </strong>
+
+
+                        <span>
+                            Artista
+                        </span>
+
+                    </div>
+
+
+                    <span class="song-play-icon">
+                        ▶
+                    </span>
+
+                </button>
+
+
+
+                <!-- =================================================
+                     CANZONE 03
+                ================================================== -->
+
+                <button
+                    class="playlist-song"
+                    data-song="2">
+
+
+                    <div class="song-number">
+                        03
+                    </div>
+
+
+                    <img
+                        src="sl.jfif"
+                        alt="Sole e luna">
+
+
+                    <div class="song-list-info">
+
+
+                        <strong>
+                            Sole e luna
+                        </strong>
+
+
+                        <span>
+                            Artista
+                        </span>
+
+                    </div>
+
+
+                    <span class="song-play-icon">
+                        ▶
+                    </span>
+
+                </button>
+
+
+
+                <!-- =================================================
+                     CANZONE 04
+                ================================================== -->
+
+                <button
+                    class="playlist-song"
+                    data-song="3">
+
+
+                    <div class="song-number">
+                        04
+                    </div>
+
+
+                    <img
+                        src="tu.jfif"
+                        alt="Tu - Umberto Tozzi">
+
+
+                    <div class="song-list-info">
+
+
+                        <strong>
+                            Tu
+                        </strong>
+
+
+                        <span>
+                            Umberto Tozzi
+                        </span>
+
+                    </div>
+
+
+                    <span class="song-play-icon">
+                        ▶
+                    </span>
+
+                </button>
+
+
+
+                <!-- =================================================
+                     CANZONE 05
+                ================================================== -->
+
+                <button
+                    class="playlist-song"
+                    data-song="4">
+
+
+                    <div class="song-number">
+                        05
+                    </div>
+
+
+                    <img
+                        src="ma.jfif"
+                        alt="Motociclisti">
+
+
+                    <div class="song-list-info">
+
+
+                        <strong>
+                            Motociclisti
+                        </strong>
+
+
+                        <span>
+                            Artista
+                        </span>
+
+                    </div>
+
+
+                    <span class="song-play-icon">
+                        ▶
+                    </span>
+
+                </button>
+
+
+
+                <!-- =================================================
+                     CANZONE 06
+                ================================================== -->
+
+                <button
+                    class="playlist-song"
+                    data-song="5">
+
+
+                    <div class="song-number">
+                        06
+                    </div>
+
+
+                    <img
+                        src="sp.jfif"
+                        alt="Spunta la luna dal monte">
+
+
+                    <div class="song-list-info">
+
+
+                        <strong>
+                            Spunta la luna dal monte
+                        </strong>
+
+
+                        <span>
+                            Artista
+                        </span>
+
+                    </div>
+
+
+                    <span class="song-play-icon">
+                        ▶
+                    </span>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FRASE FINALE
+        ====================================================== -->
+
+        <section class="playlist-ending">
+
+
+            <div class="heart-decoration">
+                ♥
+            </div>
+
+
+            <p>
+                Alcune canzoni si ascoltano.
+                <br>
+                Altre si vivono.
+            </p>
+
+
+            <span>
+                ❤️
+            </span>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TORNA ALLA HOME
+        ====================================================== -->
+
+        
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         AUDIO
+    ====================================================== -->
+
+    <audio id="audio-player">
+
+        Il tuo browser non supporta l'elemento audio.
+
+    </audio>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="playlist.js"></script>
+
+
+</body>
+
+</html>
+```

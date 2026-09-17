@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Foto ❤️</title>
+
+<link rel="stylesheet" href="davide.css">
+</head>
+
+<body class="animated-bg">
+
+<!-- SIDEBAR (rimane uguale) -->
+<div class="sidebar">
+
+    <div class="menu-toggle">☰</div>
+
+    <a href="davide.html"><span>🏠</span><p>Home</p></a>
+    <a href="foto.html"><span>📸</span><p>Foto</p></a>
+     <a href="torta.html"><span>🎂</span><p>Torta</p></a>
+     <a href="notte.html" id="night-mode">
+    <span>🌙</span>
+    <p>Modalità notte</p>
+</a>
+ <a href="lettera.html"><span>💌</span><p>Regalino</p></a>
+
+    
+
+</div>
+
+<!-- TITOLO -->
+<div class="page-title">
+    <h1>Le fotoooo!!!!! ♥️♥️♥️♥️😝</h1>
+    <p>Si dice che le persone innamorate siano i migliori fotografi 
+        ma credo che noi abbiamo un solo neurone in comune </p>
+        <p>Cioè sinceramente che ne sanno gli altri di tutte quelle volte che ero giu di morale e mettevi tutto te stesso per farmi sorridere un po </p>
+</div>
+
+<!-- GALLERIA -->
+<div class="photo-grid">
+
+    <!-- 25 FOTO -->
+    <img src="foto1.jpg">
+    <img src="foto22.png">
+    <img src="foto3.jpg">
+    <img src="foto122.jpg">
+    <img src="foto5.jpg">
+
+    <img src="foto6.jpg">
+    <img src="foto7.jpg">
+    <img src="foto8.jpg">
+    <img src="foto9.jpg">
+    <img src="foto10.jpg">
+
+    <img src="foto16.jpg">
+    <img src="foto4.jpg">
+    <img src="foto13.png">
+    <img src="foto14.png">
+    <img src="foto15.jpg">
+
+    <img src="foto11.jpg">
+    <img src="foto17.jpg">
+    <img src="foto18.jpg">
+    <img src="foto19.jpg">
+    <img src="foto20.png">
+
+    <img src="foto21.png">
+    <img src="foto22.jpg">
+    <img src="foto23.jpg">
+    <img src="foto24.jpg">
+   
+    <img src="foto25.jpg">
+    <img src="foto26.jpg">
+    <img src="foto27.jpg">
+    <img src="foto28.jpg">
+
+    <img src="foto29.jpg">
+    <img src="foto30.jpeg">
+    <img src="foto31.jpeg">
+    <img src="foto32.jpeg">
+    <img src="foto33.png">
+    <img src="foto34.jpg">
+    <img src="foto35.jpg">
+    <img src="foto36.jpg">
+    <img src="foto37.png">
+    <img src="foto38.jpg">
+    <img src="foto39.jpg">
+    <img src="foto40.jpg">
+    <img src="foto41.jpg">
+    <img src="foto42.jpg">
+
+    
+</div>
+
+<div class="button-area">
+
+    <button onclick="cuori()">💖 Sorpresa</button>
+
+    <button onclick="stelle()">⭐ Stelline</button>
+
+</div>
+
+<!-- CONTAINER STELLE -->
+<div class="stars-container" id="stars"></div>
+
+<!-- CUORI -->
+<div class="hearts-container" id="hearts"></div>
+<p class="aa">le foto sono infinite lo so ma queste le amo</p>
+<script>
+function cuori(){
+
+    const container = document.getElementById("hearts");
+
+    for(let i=0; i<25; i++){
+
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+
+        heart.innerHTML = "❤️";
+
+        heart.style.left = Math.random()*100 + "vw";
+        heart.style.animationDuration = (2 + Math.random()*3) + "s";
+        heart.style.fontSize = (20 + Math.random()*20) + "px";
+
+        container.appendChild(heart);
+
+        setTimeout(()=> {
+            heart.remove();
+        }, 5000);
+    }
+}
+</script>
+<script>
+function stelle(){
+
+    const container = document.getElementById("stars");
+
+    for(let i=0; i<25; i++){
+
+        const star = document.createElement("div");
+        star.classList.add("star");
+
+        star.innerHTML = "⭐";
+
+        star.style.left = Math.random()*100 + "vw";
+        star.style.animationDuration = (2 + Math.random()*3) + "s";
+        star.style.fontSize = (15 + Math.random()*20) + "px";
+
+        container.appendChild(star);
+
+        setTimeout(()=>{
+            star.remove();
+        }, 5000);
+    }
+}
+</script>
+</body>
+</html>

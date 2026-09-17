@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Buon 18° Amore Mio ❤️</title>
+
+    <link rel="stylesheet" href="torta.css">
+</head>
+
+<body>
+
+    <!-- ========================================= -->
+    <!-- SIDEBAR -->
+    <!-- ========================================= -->
+
+    <div class="sidebar">
+
+        <div class="menu-toggle">
+            ☰
+        </div>
+
+
+        <a href="davide.html">
+            <span>🏠</span>
+            <p>Home</p>
+        </a>
+
+
+        <a href="foto.html">
+            <span>📸</span>
+            <p>Foto</p>
+        </a>
+
+
+        <a href="music.html">
+            <span>🎧</span>
+            <p>Musica</p>
+        </a>
+
+
+        <a href="torta.html" class="active">
+            <span>🎂</span>
+            <p>Torta</p>
+        </a>
+
+
+        <a href="notte.html" id="night-mode">
+            <span>🌙</span>
+            <p>Modalità notte</p>
+        </a>
+
+
+        <a href="lettera.html">
+            <span>💌</span>
+            <p>Regalino</p>
+        </a>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- CANVAS SFONDO -->
+    <!-- ========================================= -->
+
+    <canvas id="particlesCanvas"></canvas>
+
+
+    <!-- ========================================= -->
+    <!-- CONTENUTO PRINCIPALE -->
+    <!-- ========================================= -->
+
+    <main class="cake-page">
+
+
+        <!-- ========================================= -->
+        <!-- TITOLO -->
+        <!-- ========================================= -->
+
+        <header class="cake-header">
+
+            <div class="sparkle sparkle-1">✦</div>
+            <div class="sparkle sparkle-2">✧</div>
+            <div class="sparkle sparkle-3">✦</div>
+
+            <p class="small-title">
+               
+            </p>
+
+            <h1>
+                 <span>18°</span>  ❤️
+            </h1>
+
+            <p class="subtitle">
+                Spegni tutte le candeline e ricordati di esprimere un desiderio ✨
+            </p>
+
+        </header>
+
+
+        <!-- ========================================= -->
+        <!-- AREA TORTA -->
+        <!-- ========================================= -->
+
+        <section class="cake-area">
+
+            <div class="cake-glow"></div>
+
+
+            <!-- ================================= -->
+            <!-- TORTA SVG -->
+            <!-- ================================= -->
+
+            <div class="cake-wrapper">
+
+                <svg
+                    id="cakeSVG"
+                    class="cake-svg"
+                    viewBox="0 0 1000 700"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-label="Torta di compleanno con 18 candeline"
+                >
+
+
+                    <!-- ================================= -->
+                    <!-- DEFINIZIONI -->
+                    <!-- ================================= -->
+
+                    <defs>
+
+
+                        <!-- Ombra -->
+                        <filter
+                            id="cakeShadow"
+                            x="-50%"
+                            y="-50%"
+                            width="200%"
+                            height="200%"
+                        >
+
+                            <feGaussianBlur
+                                in="SourceAlpha"
+                                stdDeviation="18"
+                            />
+
+                            <feOffset
+                                dy="18"
+                                result="offsetblur"
+                            />
+
+                            <feComponentTransfer>
+
+                                <feFuncA
+                                    type="linear"
+                                    slope="0.25"
+                                />
+
+                            </feComponentTransfer>
+
+                            <feMerge>
+
+                                <feMergeNode/>
+                                <feMergeNode in="SourceGraphic"/>
+
+                            </feMerge>
+
+                        </filter>
+
+
+                        <!-- Glow -->
+                        <filter
+                            id="softGlow"
+                            x="-100%"
+                            y="-100%"
+                            width="300%"
+                            height="300%"
+                        >
+
+                            <feGaussianBlur
+                                stdDeviation="8"
+                                result="blur"
+                            />
+
+                            <feMerge>
+
+                                <feMergeNode in="blur"/>
+                                <feMergeNode in="SourceGraphic"/>
+
+                            </feMerge>
+
+                        </filter>
+
+
+                        <!-- Gradiente torta -->
+                        <linearGradient
+                            id="cakeSideGradient"
+                            x1="0"
+                            y1="0"
+                            x2="1"
+                            y2="0"
+                        >
+
+                            <stop
+                                offset="0%"
+                                stop-color="#b9e9ff"
+                            />
+
+                            <stop
+                                offset="25%"
+                                stop-color="#e5f8ff"
+                            />
+
+                            <stop
+                                offset="50%"
+                                stop-color="#c8efff"
+                            />
+
+                            <stop
+                                offset="75%"
+                                stop-color="#a9ddf5"
+                            />
+
+                            <stop
+                                offset="100%"
+                                stop-color="#8ecce9"
+                            />
+
+                        </linearGradient>
+
+
+                        <!-- Superficie -->
+                        <radialGradient
+                            id="cakeTopGradient"
+                            cx="50%"
+                            cy="40%"
+                            r="65%"
+                        >
+
+                            <stop
+                                offset="0%"
+                                stop-color="#ffffff"
+                            />
+
+                            <stop
+                                offset="35%"
+                                stop-color="#e8f9ff"
+                            />
+
+                            <stop
+                                offset="70%"
+                                stop-color="#c9edff"
+                            />
+
+                            <stop
+                                offset="100%"
+                                stop-color="#9bd7f2"
+                            />
+
+                        </radialGradient>
+
+
+                        <!-- Glassa -->
+                        <linearGradient
+                            id="frostingGradient"
+                            x1="0"
+                            y1="0"
+                            x2="0"
+                            y2="1"
+                        >
+
+                            <stop
+                                offset="0%"
+                                stop-color="#ffffff"
+                            />
+
+                            <stop
+                                offset="45%"
+                                stop-color="#eefaff"
+                            />
+
+                            <stop
+                                offset="100%"
+                                stop-color="#bde8fa"
+                            />
+
+                        </linearGradient>
+
+
+                        <!-- Decorazioni rosa -->
+                        <radialGradient id="pinkDecoration">
+
+                            <stop
+                                offset="0%"
+                                stop-color="#ffffff"
+                            />
+
+                            <stop
+                                offset="40%"
+                                stop-color="#ffd7eb"
+                            />
+
+                            <stop
+                                offset="100%"
+                                stop-color="#f59bc6"
+                            />
+
+                        </radialGradient>
+
+
+                        <!-- Pattern -->
+                        <pattern
+                            id="smallDots"
+                            width="35"
+                            height="35"
+                            patternUnits="userSpaceOnUse"
+                        >
+
+                            <circle
+                                cx="8"
+                                cy="8"
+                                r="3"
+                                fill="#ffffff"
+                                opacity=".35"
+                            />
+
+                            <circle
+                                cx="25"
+                                cy="24"
+                                r="2"
+                                fill="#ffffff"
+                                opacity=".25"
+                            />
+
+                        </pattern>
+
+
+                    </defs>
+
+
+                    <!-- ================================= -->
+                    <!-- OMBRA -->
+                    <!-- ================================= -->
+
+                    <ellipse
+                        class="cake-shadow"
+                        cx="500"
+                        cy="615"
+                        rx="350"
+                        ry="45"
+                    />
+
+
+                    <!-- ================================= -->
+                    <!-- CORPO TORTA -->
+                    <!-- ================================= -->
+
+                    <path
+                        id="cakeBase"
+                        d="
+                            M190 390
+                            L190 535
+
+                            C190 590
+                            325 625
+                            500 625
+
+                            C675 625
+                            810 590
+                            810 535
+
+                            L810 390
+
+                            Z
+                        "
+                        fill="url(#cakeSideGradient)"
+                        filter="url(#cakeShadow)"
+                    />
+
+
+                    <!-- ================================= -->
+                    <!-- DECORAZIONE CORPO -->
+                    <!-- ================================= -->
+
+                    <path
+                        d="
+                            M190 470
+
+                            C290 520
+                            400 535
+                            500 535
+
+                            C600 535
+                            710 520
+                            810 470
+
+                            L810 535
+
+                            C710 590
+                            600 610
+                            500 610
+
+                            C400 610
+                            290 590
+                            190 535
+
+                            Z
+                        "
+                        fill="url(#smallDots)"
+                        opacity=".65"
+                    />
+
+
+                    <!-- ================================= -->
+                    <!-- RIBBON -->
+                    <!-- ================================= -->
+
+                    <path
+                        class="cake-ribbon"
+                        d="
+                            M195 475
+
+                            C290 520
+                            400 535
+                            500 535
+
+                            C600 535
+                            710 520
+                            805 475
+                        "
+                        fill="none"
+                        stroke="#ffffff"
+                        stroke-width="10"
+                        opacity=".75"
+                    />
+
+
+                    <!-- ================================= -->
+                    <!-- SUPERFICIE -->
+                    <!-- ================================= -->
+
+                    <ellipse
+                        id="cakeTop"
+                        cx="500"
+                        cy="390"
+                        rx="310"
+                        ry="125"
+                        fill="url(#cakeTopGradient)"
+                        filter="url(#cakeShadow)"
+                    />
+
+
+                    <!-- ================================= -->
+                    <!-- GLASSA -->
+                    <!-- ================================= -->
+
+                    <path
+                        id="frosting"
+                        d="
+                            M190 375
+
+                            C230 310
+                            350 265
+                            500 265
+
+                            C650 265
+                            770 310
+                            810 375
+
+                            C800 390
+                            785 395
+                            770 390
+
+                            C755 385
+                            750 415
+                            730 420
+
+                            C710 425
+                            700 390
+                            680 398
+
+                            C660 408
+                            655 440
+                            630 435
+
+                            C605 430
+                            610 395
+                            585 402
+
+                            C560 410
+                            555 445
+                            530 438
+
+                            C510 432
+                            515 395
+                            490 402
+
+                            C465 410
+                            460 440
+                            435 435
+
+                            C410 430
+                            415 395
+                            390 402
+
+                            C365 410
+                            360 438
+                            335 430
+
+                            C310 420
+                            305 390
+                            285 398
+
+                            C265 405
+                            250 420
+                            230 405
+
+                            C215 395
+                            205 385
+                            190 375
+
+                            Z
+                        "
+                        fill="url(#frostingGradient)"
+                        filter="url(#softGlow)"
+                    />
+
+
+                    <!-- ================================= -->
+                    <!-- RIFLESSO GLASSA -->
+                    <!-- ================================= -->
+
+                    <path
+                        d="
+                            M270 340
+                            C345 295
+                            420 285
+                            500 285
+
+                            C580 285
+                            655 295
+                            730 340
+                        "
+                        fill="none"
+                        stroke="#ffffff"
+                        stroke-width="13"
+                        stroke-linecap="round"
+                        opacity=".55"
+                    />
+
+
+                    <!-- ================================= -->
+                    <!-- DECORAZIONI -->
+                    <!-- ================================= -->
+
+                    <g id="cakeDecorations">
+
+                        <circle
+                            cx="275"
+                            cy="385"
+                            r="11"
+                            fill="url(#pinkDecoration)"
+                        />
+
+                        <circle
+                            cx="335"
+                            cy="350"
+                            r="9"
+                            fill="#ffffff"
+                        />
+
+                        <circle
+                            cx="405"
+                            cy="325"
+                            r="10"
+                            fill="#f7afd3"
+                        />
+
+                        <circle
+                            cx="595"
+                            cy="325"
+                            r="10"
+                            fill="#f7afd3"
+                        />
+
+                        <circle
+                            cx="665"
+                            cy="350"
+                            r="9"
+                            fill="#ffffff"
+                        />
+
+                        <circle
+                            cx="725"
+                            cy="385"
+                            r="11"
+                            fill="url(#pinkDecoration)"
+                        />
+
+                        <text
+                            x="310"
+                            y="410"
+                            class="cake-star"
+                        >
+                            ✦
+                        </text>
+
+                        <text
+                            x="690"
+                            y="410"
+                            class="cake-star"
+                        >
+                            ✦
+                        </text>
+
+                        <text
+                            x="465"
+                            y="330"
+                            class="cake-star"
+                        >
+                            ✧
+                        </text>
+
+                        <text
+                            x="535"
+                            y="330"
+                            class="cake-star"
+                        >
+                            ✧
+                        </text>
+
+                    </g>
+
+
+                    <!-- ================================= -->
+                    <!-- 18 CANDELINE -->
+                    <!-- ================================= -->
+
+                    <g id="candlesLayer"></g>
+
+
+                    <!-- ================================= -->
+                    <!-- GLOW FIAMME -->
+                    <!-- ================================= -->
+
+                    <g id="candleGlowLayer"></g>
+
+
+                </svg>
+
+            </div>
+
+
+            <!-- Canvas effetti -->
+            <canvas
+                id="effectsCanvas"
+                class="effects-canvas">
+            </canvas>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- CONTROLLI -->
+        <!-- ========================================= -->
+
+        <section class="candle-controls">
+
+            <div class="candle-counter">
+
+                <strong id="candleCount">
+                    18
+                </strong>
+
+                <span>
+                    candeline accese
+                </span>
+
+            </div>
+
+
+            <button
+                id="lightAllBtn"
+                class="light-button"
+                type="button"
+            >
+
+                🔥 Accendi tutte le candeline
+
+            </button>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- MESSAGGIO FINALE -->
+        <!-- ========================================= -->
+
+        <section
+            id="birthdayMessage"
+            class="birthday-message hidden"
+        >
+
+            <div class="message-card">
+
+                <div class="message-sparkles">
+                    ✨ ✦ ✨
+                </div>
+
+                <h2>
+                    🎉 Hai spento tutte le candeline! 🎉
+                </h2>
+
+                <p>
+                    Adesso esprimi il tuo desiderio...
+                </p>
+
+                <div class="big-18">
+                    18
+                </div>
+
+                <p class="love-message">
+                    Buon compleanno amore mio ❤️
+                </p>
+                <button id="backToCakeBtn" class="back-button" type="button">
+    🔄 Torna alla torta
+</button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================================= -->
+
+    <script src="torta.js"></script>
+
+</body>
+
+</html>
